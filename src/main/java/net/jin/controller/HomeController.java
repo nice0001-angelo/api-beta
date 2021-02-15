@@ -22,9 +22,12 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
         Date date = new Date();
-		DateFormat dateFormat1 = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
-		DateFormat dateFormat2 = DateFormat.getDateInstance(DateFormat.LONG);
-		DateFormat dateFormat3 = DateFormat.getDateInstance(DateFormat.FULL);
+		DateFormat dateFormat1 = DateFormat.getDateInstance(DateFormat.FULL);
+        DateFormat dateFormat2 = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
+		DateFormat dateFormat3 = DateFormat.getDateInstance(DateFormat.LONG);
+		DateFormat dateFormat4 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+		DateFormat dateFormat5 = DateFormat.getDateInstance(DateFormat.SHORT);
+
 
 		
 		
@@ -40,14 +43,14 @@ public class HomeController {
 		System.out.println("formatedDate3 :"+formatedDate3);
 		model.addAttribute("serverTime3", formatedDate3);
 		
-//		String formatedDate4 = dateFormat4.format(date);
-//		System.out.println("formatedDate4 :"+formatedDate4);
-//		model.addAttribute("serverTime4", formatedDate4);
-//		
-//		String formatedDate5 = dateFormat5.format(date);
-//		System.out.println("formatedDate5 :"+formatedDate5);
-//		model.addAttribute("serverTime5", formatedDate5);
-//		
+		String formatedDate4 = dateFormat4.format(date);
+		System.out.println("formatedDate4 :"+formatedDate4);
+		model.addAttribute("serverTime4", formatedDate4);
+		
+		String formatedDate5 = dateFormat5.format(date);
+		System.out.println("formatedDate5 :"+formatedDate5);
+		model.addAttribute("serverTime5", formatedDate5);
+		
 		
 		return "home";
 	}
