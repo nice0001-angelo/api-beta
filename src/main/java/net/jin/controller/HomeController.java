@@ -21,14 +21,19 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+        Date date = new Date();
+		DateFormat dateFormat1 = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		DateFormat dateFormat2 = DateFormat.getDateInstance(DateFormat.FULL);
 		
-		String formatedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formatedDate);
+		String formatedDate1 = dateFormat1.format(date);
+		System.out.println("formatedDate1 :"+formatedDate1);
+		model.addAttribute("serverTime1", formatedDate1);
 		
-		System.out.println("JINHYUN /n");
-		System.out.println(formatedDate);
+		String formatedDate2 = dateFormat2.format(date);
+		System.out.println("formatedDate2 :"+formatedDate2);
+		model.addAttribute("serverTime2", formatedDate2);
+		
+		
 		
 		return "home";
 	}
