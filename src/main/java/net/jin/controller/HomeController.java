@@ -25,6 +25,7 @@ public class HomeController {
 		DateFormat dateFormat1 = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
 		DateFormat dateFormat2 = DateFormat.getDateInstance(DateFormat.LONG);
 		DateFormat dateFormat3 = DateFormat.getDateInstance(DateFormat.FULL);
+
 		
 		
 		String formatedDate1 = dateFormat1.format(date);
