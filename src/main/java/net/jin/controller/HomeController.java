@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HomeController {
 	
+	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		Date date = new Date();
@@ -24,6 +26,9 @@ public class HomeController {
 		
 		String formatedDate = dateFormat.format(date);
 		model.addAttribute("serverTime", formatedDate);
+		
+		System.out.println("JINHYUN /n");
+		System.out.println(formatedDate);
 		
 		return "home";
 	}
