@@ -8,6 +8,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
+import net.jin.domain.*;
 
 /**
  * @author njh
