@@ -27,6 +27,7 @@ public class HomeController {
 		DateFormat dateFormat3 = DateFormat.getDateInstance(DateFormat.LONG);
 		DateFormat dateFormat4 = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		DateFormat dateFormat5 = DateFormat.getDateInstance(DateFormat.SHORT);
+		DateFormat dateFormat6 = DateFormat.getDateInstance(DateFormat.SHORT);
 
 
 		
@@ -50,6 +51,10 @@ public class HomeController {
 		String formatedDate5 = dateFormat5.format(date);
 		System.out.println("formatedDate5 :"+formatedDate5);
 		model.addAttribute("serverTime5", formatedDate5);
+		
+		String formatedDate6 = dateFormat6.format(date);
+		System.out.println("formatedDate6 :"+formatedDate6);
+		model.addAttribute("serverTime6", formatedDate6);
 		
 		
 		return "home";
