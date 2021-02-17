@@ -5,6 +5,7 @@ package net.jin.controller;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
@@ -22,12 +23,12 @@ import net.jin.service.*;
 public class CodeGroupController {
 	
 	@Autowired
-	private CodeGroupService service;
+	private CodeGroupService codeGroupService;
 	
 	//상세조회
 	@RequestMapping(value = "/{groupCode}", method = RequestMethod.GET)
 	public ResponseEntity<CodeGroup> read(@PathVariable("groupCode") String groupCode) throws Exception{
-		CodeGroup codeGroup = service.read(groupCode);
+		CodeGroup codeGroup = codeGroupService.read(groupCode);
 		
 		return new ResponseEntity<>(codeGroup, HttpStatus.OK);
 	}
@@ -37,7 +38,16 @@ public class CodeGroupController {
 	public ResponseEntity<List<CodeGroup>> list() throws Exception{
 		log.info("list");
 		
-		return new ResponseEntity<>(service.list(), HttpStatus.OK)
+		return new ResponseEntity<>(codeGroupService.list(), HttpStatus.OK)
 	}
 
+	//등록
+	@RequestMapping(value ="", method = RequestMethod.POST)
+	public ResponseEntity<CodeGroup> register(@Validated @RequestBody CodeGroup codeGroup) throws Exception{
+		log.Info("register");
+		
+		codeGroupService.register(codeGroup);
+		
+		
+	}
 }
