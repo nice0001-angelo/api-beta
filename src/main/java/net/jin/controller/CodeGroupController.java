@@ -3,6 +3,8 @@
  */
 package net.jin.controller;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.validation.annotation.*;
@@ -38,7 +40,7 @@ public class CodeGroupController {
 	public ResponseEntity<List<CodeGroup>> list() throws Exception{
 		log.info("list");
 		
-		return new ResponseEntity<>(codeGroupService.list(), HttpStatus.OK)
+		return new ResponseEntity<>(codeGroupService.list(), HttpStatus.OK);
 	}
 
 	//등록
