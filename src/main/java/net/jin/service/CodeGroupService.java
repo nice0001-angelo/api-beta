@@ -3,6 +3,8 @@
  */
 package net.jin.service;
 
+import java.util.*;
+
 import net.jin.domain.*;
 
 /**
