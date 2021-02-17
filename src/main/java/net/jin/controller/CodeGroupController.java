@@ -50,6 +50,10 @@ public class CodeGroupController {
 		
 		codeGroupService.register(codeGroup);
 		
+		log.Info("register codeGroup.getGroupCode() = "+ codeGroup.getGroupCode());
 		
+		return new ResponseEntity<>(codeGroup, HttpStatus.OK);
 	}
+	
+	//삭제
 }
