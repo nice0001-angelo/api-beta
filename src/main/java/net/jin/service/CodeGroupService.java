@@ -13,14 +13,21 @@ import net.jin.domain.*;
  */
 public interface CodeGroupService {
 	
-	public void register(CodeGroup codeGroup) throws Exception;
-	
+	//상세조회
 	public CodeGroup read(String groupCode) throws Exception;
 	
+	//목록조회
+	public List<CodeGroup> list() throws Exception;
+
+	//등록
+	public void register(CodeGroup codeGroup) throws Exception;
+	
+	//수정
 	public void modify(CodeGroup codeGroup) throws Exception;
 	
+	//삭제
 	public void remove(String groupCode) throws Exception;
 	
-	public List<CodeGroup> list() throws Exception;
+
 
 }

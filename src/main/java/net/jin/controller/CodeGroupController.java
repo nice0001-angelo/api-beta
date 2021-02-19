@@ -66,7 +66,8 @@ public class CodeGroupController {
 	
 	//수정
 	@RequestMapping(value="{groupCode}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> modify(@PathVariable("groupCode") String groupCode, @Validated @RequestBody CodeGroup codeGroup) throws Exception{
+	public ResponseEntity<Void> modify(@PathVariable("groupCode") String groupCode, 
+			@Validated @RequestBody CodeGroup codeGroup) throws Exception{
 		codeGroup.setGroupCode(groupCode);
 		
 		codeGroupService.modify(codeGroup);
