@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
 import net.jin.domain.*;
+import net.jin.mapper.*;
 import net.jin.service.*;
 
 /**
