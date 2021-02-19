@@ -53,13 +53,60 @@ $(document).ready(function() {
 						contentType : "application/jason; charset=UTF-8",
 						success : function(){
 							alert("Created");
+						},
+						error : function(xhr, textStatus, error){
+							alert("code:" + xhr.status + "\n"
+									+ "message:" + xhr.responseText + "\n"
+									+ "error:"+error);
 						}
-					
-							
 					});
-				
-				
 			});
 			
+			//삭제
+			$("#codeGroupDeleteBtn").on("click", function() {
+				$.ajax({
+					type : "DELETE",
+					url : "/codegroups/" + $("#groupCode").val(),
+					contentType : "application/json; charset=UTF-8",
+					success : function() {
+						alert("Deleted");
+					},
+					error : function(xhr, status, error) {
+						alert("code:" + xhr.status + "\n"
+							+ "message:" + xhr.responseText + "\n"
+							+ "error:" + error);
+					}
+				});
+			});
 
+			//수정
+			$("#codeGroupModifyBtn").on("click", function() {
+				var groupCodeVal = $("#groupCode").val();
+				
+				var codeGroupObject = {
+					groupCode : groupCodeVal,
+					groupName : $("#groupName").val()
+				};
+
+				$.ajax({
+					type : "PUT",
+					url : "/codegroups/" + groupCodeVal,
+					data : JSON.stringify(codeGroupObject),
+					contentType : "application/json; charset=UTF-8",
+					success : function() {
+						alert("Modified");
+					},
+					error : function(xhr, status, error) {
+						alert("code:" + xhr.status + "\n"
+							+ "message:" + xhr.responseText + "\n"
+							+ "error:" + error);
+					}
+				});
+			});
+			
+			//입력값 리셋
+			$("#codeGroupResetBtn").on("click", function() {
+				$("#groupCode").val("");
+				$("#groupName").val("");
+			});
 });
