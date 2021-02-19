@@ -37,13 +37,26 @@ $(document).ready(function() {
 						});
 			});
 			
+			//등록
 			$("#codeGroupRegisterBtn").on("click",function(){
 					var codeGroupObject = {
 							groupCode : $("#groupCode").val();
 							groupName : $("#groupName").val();
 					};
 					
+					alert(JSON.stringify(codeGroupObject));
 					
+					$ajax({
+						type : "POST",
+						url : "/codegroups",
+						data : JSON.stringify(condGroupObject),
+						contentType : "application/jason; charset=UTF-8",
+						success : function(){
+							alert("Created");
+						}
+					
+							
+					});
 				
 				
 			});
