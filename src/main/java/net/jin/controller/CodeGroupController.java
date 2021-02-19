@@ -56,11 +56,15 @@ public class CodeGroupController {
 	}
 	
 	//삭제
-	@RequestMapping(value="", method = RequestMethod.DELETE)
+	@RequestMapping(value="{groupCode}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> remove(@PathVariable("groupCode") String groupCode) throws Exception {
 		
 		codeGroupService.remove(groupCode);
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
+	
+	//수정
+	@RequestMapping(value="{groupCode}", method = RequestMethod.PUT)
+	public 
 }
