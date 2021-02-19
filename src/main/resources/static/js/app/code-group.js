@@ -11,9 +11,9 @@ $(document).ready(function() {
 								alert(JSON.stringify(data));
 							},
 							error : function(xhr, status, error) {
-								alert("code:" + xhr.status + "\n" + "message:"
-										+ xhr.responseText + "\n" + "error:"
-										+ error);
+								alert("code:" + xhr.status + "\n" 
+									+ "message:" + xhr.responseText + "\n" 
+									+ "error:" + error);
 							}
 						});
 					});
@@ -26,9 +26,24 @@ $(document).ready(function() {
 							contentType : "application/jason; charset=UTF-8",
 							success : function(data){
 								console.log(data);
+								alert(JSON.stringify(data));
+								$(#"groupName").val(data.groupName);
+							},
+							error : function(xhr, status, error){
+								alert("code:" + xhr.status + "\n"
+									+ "message:" + xhr.responseText + "\n"
+									+ "error:" + error)
 							}
-							
 						});
+			});
+			
+			$("#codeGroupRegisterBtn").on("click",function(){
+					var codeGroupObject = {
+							groupCode : $("#groupCode").val();
+							groupName : $("#groupName").val();
+					};
+					
+					
 				
 				
 			});
