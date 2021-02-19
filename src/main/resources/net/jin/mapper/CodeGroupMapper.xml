@@ -5,31 +5,59 @@
 <mapper namespace="net.jin.mapper.CodeGroupMapper">
 
 <insert id="create">
+
 INSERT INTO code_group
-(
- group_code,
- group_name
- )
- VALUES
+ 
  (
- #{groupCode},
- #{groupName}
+ 	group_code,
+ 	group_name
+ )
+ 
+ VALUES
+ 
+ (
+ 	#{groupCode},
+ 	#{groupName}
  ) 
+ 
 </insert>
 
 <select id="read" resultType="CodeGroup">
+
 SELECT group_code,
 	   group_name,
 	   use_yn,
 	   reg_date
 FROM code_group
 WHERE group_code = #{groupCode} 
+
 </select>
 
-<update id="update">UPDATE code_groupSET group_name =#{groupName}WHERE group_code = #{groupCode} </update>
+<update id="update">
 
-<delete id="delete">DELETE FROM code_groupWHERE group_code = #{groupCode} </delete>
+UPDATE code_group
+SET group_name =#{groupName}
+WHERE group_code = #{groupCode} 
 
-<select id="list" resultType="CodeGroup">SELECT group_code,group_name,use_yn,reg_dateFROM code_groupORDER BY group_code DESC,reg_date DESC </select>
+</update>
+
+<delete id="delete">
+
+DELETE 
+FROM code_group
+WHERE group_code = #{groupCode} 
+
+</delete>
+
+<select id="list" resultType="CodeGroup">
+
+SELECT group_code
+      ,group_name
+      ,use_yn
+      ,reg_date
+FROM code_group
+ORDER BY group_code DESC,reg_date DESC 
+
+</select>
 
 </mapper>
