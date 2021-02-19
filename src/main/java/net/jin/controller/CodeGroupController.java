@@ -52,7 +52,9 @@ public class CodeGroupController {
 		
 		log.Info("register codeGroup.getGroupCode() = "+ codeGroup.getGroupCode());
 		
-		return new ResponseEntity<>(codeGroup, HttpStatus.OK);
+		System.out.println();
+		
+		return new ResponseEntity<>(codeGroup, HttpStatus.OK); 
 	}
 	
 	//삭제
