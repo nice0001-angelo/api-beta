@@ -52,10 +52,15 @@ public class CodeGroupController {
 		
 		log.Info("register codeGroup.getGroupCode() = "+ codeGroup.getGroupCode());
 		
-		System.out.println();
-		
 		return new ResponseEntity<>(codeGroup, HttpStatus.OK); 
 	}
 	
 	//삭제
+	@RequestMapping(value="", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> remove(@PathVariable("groupCode") String groupCode) throws Exception {
+		
+		codeGroupService.remove(groupCode);
+		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
 }
