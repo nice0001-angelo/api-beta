@@ -50,7 +50,8 @@ public class CodeGroupServiceImpl implements CodeGroupService{
 		codeGroupMapper.update(codeGroup);
 		
 	}
-
+	
+	//삭제
 	@Override
 	public void remove(String groupCode) throws Exception {
 		// TODO Auto-generated method stub
