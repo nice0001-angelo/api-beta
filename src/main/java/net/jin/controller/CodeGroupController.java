@@ -40,7 +40,7 @@ public class CodeGroupController {
 	public ResponseEntity<List<CodeGroup>> list() throws Exception{
 		log.info("list");
 		
-		return new ResponseEntity<>(codeGroupService.list(), HttpStatus.OK);
+		return new ResponseEntity<List<CodeGroup>>(codeGroupService.list(), HttpStatus.OK);
 	}
 
 	//등록
@@ -61,7 +61,7 @@ public class CodeGroupController {
 		
 		codeGroupService.remove(groupCode);
 		
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
 	//수정
