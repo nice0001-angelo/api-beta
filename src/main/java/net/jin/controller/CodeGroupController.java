@@ -31,9 +31,9 @@ public class CodeGroupController {
 	@RequestMapping(value = "/{groupCode}", method = RequestMethod.GET)
 	public ResponseEntity<CodeGroup> read(@PathVariable("groupCode") String groupCode) throws Exception{
 		CodeGroup codeGroup = codeGroupService.read(groupCode);
-		
-		return new ResponseEntity<>(codeGroup, HttpStatus.OK);
-	}
+
+		return new ResponseEntity<CodeGroup>(codeGroup, HttpStatus.OK);
+ 	}
 	
 	//목록조회
 	@RequestMapping(value = "", method = RequestMethod.GET)
@@ -52,7 +52,7 @@ public class CodeGroupController {
 		
 		log.Info("register codeGroup.getGroupCode() = "+ codeGroup.getGroupCode());
 		
-		return new ResponseEntity<>(codeGroup, HttpStatus.OK); 
+		return new ResponseEntity<CodeGroup>(codeGroup, HttpStatus.OK); 
 	}
 	
 	//삭제
@@ -61,7 +61,7 @@ public class CodeGroupController {
 		
 		codeGroupService.remove(groupCode);
 		
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	//수정
