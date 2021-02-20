@@ -138,7 +138,7 @@ log_no int not null auto_increment
 ,method_name varchar(100) not null
 ,remote_addr varchar(50) not null
 ,reg_date timestamp default now()
-,primary key(log_no)
+,primaaccess_logry key(log_no)
 );
 
 

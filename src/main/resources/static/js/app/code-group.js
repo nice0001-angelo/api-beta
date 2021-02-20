@@ -67,6 +67,7 @@ $(document).ready(function() {
 			
 			//삭제
 			$("#codeGroupDeleteBtn").on("click", function() {
+				alert("Deleting~!!");
 				$.ajax({
 					type : "DELETE",
 					url : "/codegroups/" + $("#groupCode").val(),
@@ -81,6 +82,7 @@ $(document).ready(function() {
 					}
 				});
 			});
+
 
 			//수정
 			$("#codeGroupModifyBtn").on("click", function() {
