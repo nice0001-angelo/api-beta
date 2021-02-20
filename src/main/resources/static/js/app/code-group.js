@@ -21,6 +21,7 @@ $(document).ready(function() {
 
 			//상세조회
 			$("#codeGroupReadBtn").on("click",function(){
+				alert("Reading~!!");
 						$.ajax({
 							type : "GET",
 							url : "/codegroups/"+$("#groupCode").val(),
@@ -46,6 +47,7 @@ $(document).ready(function() {
 							groupName : $("#groupName").val()
 					};
 					
+					alert("Registering~!!");
 					alert(JSON.stringify(codeGroupObject));
 					
 					$ajax({
@@ -92,7 +94,8 @@ $(document).ready(function() {
 					groupCode : groupCodeVal,
 					groupName : $("#groupName").val()
 				};
-
+				
+				alert("Modifying~!!");
 				$.ajax({
 					type : "PUT",
 					url : "/codegroups/" + groupCodeVal,
@@ -111,7 +114,7 @@ $(document).ready(function() {
 			
 			//입력값 리셋
 			$("#codeGroupResetBtn").on("click", function() {
-				alert("reset")
+				alert("Resetting~!!");
 				$("#groupCode").val("");
 				$("#groupName").val("");
 				
