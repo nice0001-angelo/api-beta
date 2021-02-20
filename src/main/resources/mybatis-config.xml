@@ -5,6 +5,6 @@
 		<setting value="true" name="mapUnderscoreToCamelCase"/>
 	</settings>
 	<typeAliases>
-		<package name="net.jin.api-beta"/>
+		<package name="net.jin.domain"/>
 	</typeAliases>
 </configuration>
