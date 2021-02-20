@@ -1,5 +1,6 @@
 package net.jin;
 
+import org.mybatis.spring.annotation.*;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 
