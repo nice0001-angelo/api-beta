@@ -2,6 +2,7 @@ $(document).ready(function() {
 	
 			//목록조회
 			$("#codeGroupListBtn").on("click",function() {
+				alert("List");
 						$.ajax({
 							type : "GET",
 							url : "/codegroups",
@@ -27,7 +28,7 @@ $(document).ready(function() {
 							success : function(data){
 								console.log(data);
 								alert(JSON.stringify(data));
-								$(#"groupName").val(data.groupName);
+								$("#groupName").val(data.groupName);
 							},
 							error : function(xhr, status, error){
 								alert("code:" + xhr.status + "\n"
@@ -36,12 +37,13 @@ $(document).ready(function() {
 							}
 						});
 			});
+
 			
 			//등록
 			$("#codeGroupRegisterBtn").on("click",function(){
 					var codeGroupObject = {
-							groupCode : $("#groupCode").val();
-							groupName : $("#groupName").val();
+							groupCode : $("#groupCode").val(),
+							groupName : $("#groupName").val()
 					};
 					
 					alert(JSON.stringify(codeGroupObject));
@@ -61,6 +63,7 @@ $(document).ready(function() {
 						}
 					});
 			});
+			
 			
 			//삭제
 			$("#codeGroupDeleteBtn").on("click", function() {
@@ -106,7 +109,9 @@ $(document).ready(function() {
 			
 			//입력값 리셋
 			$("#codeGroupResetBtn").on("click", function() {
+				alert("reset")
 				$("#groupCode").val("");
 				$("#groupName").val("");
+				
 			});
 });
