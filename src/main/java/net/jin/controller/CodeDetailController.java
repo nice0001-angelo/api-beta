@@ -59,8 +59,15 @@ public class CodeDetailController {
 		log.info("getCodeValue:"+CodeDetail.getCodevalue());
 		
 		return ResponseEntity<CodeDetail>(CodeDetail, HttpStatus.OK);
+	}
+	
+	//수정
+	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.PUT)
+	public void Modify(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeGroup, @Validated @RequestBody CodeDetail codeDetail) {
 		
 	}
+	
+	
 	 
 	
 )
