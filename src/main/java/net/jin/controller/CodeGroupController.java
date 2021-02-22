@@ -91,9 +91,9 @@ public class CodeGroupController {
 	//상세조회
 	@RequestMapping(value = "/{groupCode}", method = RequestMethod.GET)
 	public ResponseEntity<CodeGroup> read(@PathVariable("groupCode") String groupCode) throws Exception{
-		CodeGroup codeGroup = codeGroupService.read(groupCode);
-
-		return new ResponseEntity<CodeGroup>(codeGroup, HttpStatus.OK);
+		//CodeGroup codeGroup = codeGroupService.read(groupCode);
+		//return new ResponseEntity<CodeGroup>(codeGroup, HttpStatus.OK);
+		return new ResponseEntity<CodeGroup>(codeGroupService.read(groupCode), HttpStatus.OK);
  	}
 	
 	//목록조회
