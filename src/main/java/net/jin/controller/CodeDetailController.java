@@ -3,8 +3,11 @@
  */
 package net.jin.controller;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
@@ -33,15 +36,33 @@ public class CodeDetailController {
 		codeDetail.setGroupCode(groupCode);
 		codeDetail.setCodeValue(codeValue);
 		
-		return new ResponseEntity<CodeDetail>(codeDetailService.read(codeDetail)) ;
+		return new ResponseEntity<CodeDetail>(codeDetailService.read(codeDetail), HttpStatus.OK) ;
 	}
 	
 	//목록조회
 	@RequestMapping(value ="", method = RequestMethod.GET)
 	public ResponseEntity<List<CodeDetail>> list() throws Exception{
 		
+		log.info("list");
+		
 		return new ResponseEntity<List<CodeDetail>>(codeDetailService.list(), HttpStatus.OK);  
 	}
 	
+	//등록
+	@RequestMapping(value = "", method = RequestMethod.POST)
+	public ResponseEntity<CodeDetail> register(@Validated @RequestBody CodeDetail codeDetail) throws Exception {
+		log.info("register");
+		
+		codeDetailService.register(codeDetail);
+		
+		log.info("getGroupCode:"+CodeDetail.getGroupCode());
+		log.info("getCodeValue:"+CodeDetail.getCodevalue());
+		
+		return ResponseEntity<CodeDetail>(CodeDetail, HttpStatus.OK);
+		
+	}
+	 
+	
+)
 
 }
