@@ -63,12 +63,12 @@ public class CodeDetailController {
 	
 	//수정
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.PUT)
-	public void Modify(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue, @Validated @RequestBody CodeDetail codeDetail) {
+	public ResponseEntity<Void> Modify(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue, @Validated @RequestBody CodeDetail codeDetail) {
 	
 		codeDetail.setGroupCode(groupCode);
 		codeDetail.setCodeValue(codeValue);
 		
-		return ResponseEntity<CodeDetail>
+		return ResponseEntity<Void>(codeDetailService.modify(codeDetail),HttpStatus.NO_CONTENT);
 	}
 	
 	
