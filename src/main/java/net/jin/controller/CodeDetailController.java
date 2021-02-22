@@ -26,10 +26,21 @@ public class CodeDetailController {
 	
 	//상세조회
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.GET)
-	public ResponseEntity<CodeDetail> read(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throw Exception {
-	
+	public ResponseEntity<CodeDetail> read(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throws Exception {
 		
-		return new ResponseEntity<CodeDetail>;
+		CodeDetail codeDetail = new CodeDetail();
+		
+		codeDetail.setGroupCode(groupCode);
+		codeDetail.setCodeValue(codeValue);
+		
+		return new ResponseEntity<CodeDetail>(codeDetailService.read(codeDetail)) ;
+	}
+	
+	//목록조회
+	@RequestMapping(value ="", method = RequestMethod.GET)
+	public ResponseEntity<List<CodeDetail>> list() throws Exception{
+		
+		return new ResponseEntity<List<CodeDetail>>(codeDetailService.list(), HttpStatus.OK);  
 	}
 	
 
