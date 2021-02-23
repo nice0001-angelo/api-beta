@@ -36,21 +36,22 @@ public class CodeDetailServiceImpl implements CodeDetailService{
 		return codeDetailMapper.read(CodeDetail);
 	}
 
+	//목록조회
 	@Override
 	public List<CodeDetail> list() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return codeDetailMapper.list();
 	}
 
+	//수정
 	@Override
 	public void modify(CodeDetail codeDetail) throws Exception {
-		// TODO Auto-generated method stub
-		
+		codeDetailMapper.update(codeDetail);
 	}
 
+	//삭제
 	@Override
 	public void remove(CodeDetail codeDetail) throws Exception {
-		// TODO Auto-generated method stub
+		codeDetailMapper.delete(codeDetail);
 		
 	}
 
