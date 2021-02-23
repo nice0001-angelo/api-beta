@@ -236,7 +236,7 @@ $(document).ready(function() {
 			});
 			
 			//입력값 리셋
-			$("#codeGroupResetBtn").on("click", function() {
+			$("#codeDetailResetBtn").on("click", function() {
 				alert("Resetting~!!");
 				$("#groupCode").val("");
 				$("#groupName").val("");
