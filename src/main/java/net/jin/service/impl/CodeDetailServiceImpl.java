@@ -3,17 +3,27 @@
  */
 package net.jin.service.impl;
 
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
+
+import net.jin.domain.*;
 import net.jin.service.*;
 
 /**
  * @author njh
  *
  */
+@Service
 public class CodeDetailServiceImpl implements CodeDetailService{
 
+	@Autowired
+	private CodeDetailMapper codeDetailMapper;
+	
+	//등록
 	@Override
 	public void register(CodeDetail codeDetail) throws Exception {
-		// TODO Auto-generated method stub
+		String groupCode = codeDetail.getGroupCode();
+		codeDetailMapper.get
 		
 	}
 
