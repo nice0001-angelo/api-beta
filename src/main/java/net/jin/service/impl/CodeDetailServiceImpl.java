@@ -3,10 +3,13 @@
  */
 package net.jin.service.impl;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
 import net.jin.domain.*;
+import net.jin.mapper.*;
 import net.jin.service.*;
 
 /**
@@ -33,7 +36,7 @@ public class CodeDetailServiceImpl implements CodeDetailService{
 	//상세조회
 	@Override
 	public CodeDetail read(CodeDetail codeDetail) throws Exception {
-		return codeDetailMapper.read(CodeDetail);
+		return codeDetailMapper.read(codeDetail);
 	}
 
 	//목록조회
