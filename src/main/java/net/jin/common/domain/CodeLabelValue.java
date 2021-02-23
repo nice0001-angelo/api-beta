@@ -1,7 +1,7 @@
 /**
  * 
  */
-package net.jin.domain;
+package net.jin.common.domain;
 
 import lombok.*;
 
