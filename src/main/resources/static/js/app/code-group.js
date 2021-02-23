@@ -114,7 +114,7 @@ $(document).ready(function() {
 			
 			//입력값 리셋
 			$("#codeGroupResetBtn").on("click", function() {
-				alert("Resetting~!!");
+				alert("CodeGroup Resetting~!!");
 				$("#groupCode").val("");
 				$("#groupName").val("");
 				
@@ -122,13 +122,15 @@ $(document).ready(function() {
 			
 			
 			
+			
+			
 			//CodeDetail
 			//목록조회
 			$("#codeDetailListBtn").on("click",function() {
-				alert("List~!!");
+				alert("CodeDetail List~!!");
 						$.ajax({
 							type : "GET",
-							url : "/codegroups",
+							url : "/codedetails",
 							contentType : "application/json; charset=UTF-8",
 							success : function(data) {
 								console.log(data);
@@ -147,12 +149,14 @@ $(document).ready(function() {
 				alert("Reading~!!");
 						$.ajax({
 							type : "GET",
-							url : "/codegroups/"+$("#groupCode").val(),
+							url : "/codedetails/"+$("#codeGroupCode").val()+"/"+$("#codeValue").val(),
 							contentType : "application/jason; charset=UTF-8",
 							success : function(data){
 								console.log(data);
 								alert(JSON.stringify(data));
-								$("#groupName").val(data.groupName);
+								$("#codeGroupCode").val(data.groupCode);
+								$("#codeValue").val(data.codeValue);
+								$("#codeName").val(data.codeName);
 							},
 							error : function(xhr, status, error){
 								alert("code:" + xhr.status + "\n"
@@ -165,18 +169,19 @@ $(document).ready(function() {
 			
 			//등록
 			$("#codeDetailRegisterBtn").on("click",function(){
-					var codeGroupObject = {
-							groupCode : $("#groupCode").val(),
-							groupName : $("#groupName").val()
+					var codeDetailObject = {
+							groupCode : $("#codeGroupCode").val(),
+							codeValue : $("#codeValue").val(),
+							codeName : $("#codeName").val(),
 					};
 					
-					alert("Registering~!!");
-					alert(JSON.stringify(codeGroupObject));
+					alert("CodeDetail Registering~!!");
+					alert(JSON.stringify(codeDetailObject));
 					
 					$.ajax({
 						type : "POST",
 						url : "/codegroups",
-						data : JSON.stringify(codeGroupObject),
+						data : JSON.stringify(codeDetailObject),
 						contentType : "application/json; charset=UTF-8",
 						success : function(){
 							alert("Created");
@@ -192,10 +197,10 @@ $(document).ready(function() {
 		
 			//삭제
 			$("#codeDetailDeleteBtn").on("click", function() {
-				alert("Deleting~!!");
+				alert("CodeDetail Deleting~!!");
 				$.ajax({
 					type : "DELETE",
-					url : "/codegroups/" + $("#groupCode").val(),
+					url : "/codedetails/" + $("#groupCode").val()+"/"+$("codeValue").val(),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
 						alert("Deleted");
@@ -237,9 +242,9 @@ $(document).ready(function() {
 			
 			//입력값 리셋
 			$("#codeDetailResetBtn").on("click", function() {
-				alert("Resetting~!!");
-				$("#groupCode").val("");
-				$("#groupName").val("");
-				
+				alert("CodeDetail Resetting~!!");
+				$("#codeGroupCode").val("");
+				$("#codeValue").val("");
+				$("#codeName").val("");
 			});
 });
