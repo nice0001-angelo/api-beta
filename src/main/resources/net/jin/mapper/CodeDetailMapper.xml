@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.jin.mapper.CodeDetailMapper">
+
+<insert id="create">
+
+INSERT INTO code_detail
+ 
+ (
+ 	group_code,
+ 	code_value,
+ 	code_name,
+ 	sort_seq
+ 	
+ )
+ 
+ VALUES
+ 
+ (
+ 	#{groupCode},
+ 	#{codeValue},
+ 	#{codeName},
+ 	#{sortSeq},
+ ) 
+ 
+</insert>
+
+
+
+<select id="read" resultType="CodeDetail">
+
+SELECT group_code,
+	   code_value,
+	   code_name,
+	   sort_seq,
+	   use_yn,
+	   reg_date
+FROM code_detail
+WHERE group_code = #{groupCode} 
+And code_value = #{codeValue}
+</select>
+ 
+
+<update id="update">
+
+UPDATE code_detail
+SET code_name =#{codeName}
+WHERE group_code = #{groupCode} 
+AND code_value = #{codeValue}
+</update>
+
+<delete id="delete">
+
+DELETE 
+FROM code_detail
+WHERE group_code = #{groupCode}
+AND code_value =#{codeValue} 
+
+</delete>
+
+<select id="list" resultType="CodeDetail">
+
+SELECT group_code
+      ,code_value
+      ,code_name
+      ,sort_seq
+      ,use_yn
+      ,reg_date
+FROM code_detail
+ORDER BY group_code ASC,sort_seq ASC 
+
+</select>
+
+
+<select id="getMaxSortSeq" resultType="int">
+
+SELECT IFNULL(MAX(sort_seq),0)
+FROM code_detail
+WHERE groud_code = #{groupCode} 
+
+</select>
+
+
+</mapper>
