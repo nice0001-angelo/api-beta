@@ -22,6 +22,7 @@ public class CodeServiceImpl implements CodeService{
 	@Autowired
 	private CodeMapper codeMapper;
 
+	//그룹코드목록조회
 	@Override
 	public List<CodeLabelValue> getCodeGroupList() throws Exception {
 		// TODO Auto-generated method stub

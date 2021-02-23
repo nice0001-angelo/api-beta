@@ -3,12 +3,17 @@
  */
 package net.jin.mapper;
 
+import java.util.*;
+
+import net.jin.common.domain.*;
+
 /**
  * @author njh
  *
  */
-public class CodeMapper {
+public interface CodeMapper {
 	
-	Public List<CodeLabelValue> getCodeGroupList() throws Exception;
+	//그룹코드목록조회
+	public List<CodeLabelValue> getCodeGroupList() throws Exception;
 
 }
