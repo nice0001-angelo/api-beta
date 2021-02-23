@@ -23,8 +23,11 @@ public class CodeDetailServiceImpl implements CodeDetailService{
 	@Override
 	public void register(CodeDetail codeDetail) throws Exception {
 		String groupCode = codeDetail.getGroupCode();
-		codeDetailMapper.get
+		int maxSortSeq = codeDetailMapper.getMaxSortSeq(groupCode);
 		
+		codeDetail.setSortSeq(maxSortSeq+1);
+		
+		codeDetailMapper.create(codeDetail);
 	}
 
 	//상세조회
