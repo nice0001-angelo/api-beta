@@ -27,10 +27,10 @@ public class CodeDetailServiceImpl implements CodeDetailService{
 		
 	}
 
+	//상세조회
 	@Override
 	public CodeDetail read(CodeDetail codeDetail) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return codeDetailMapper.read(CodeDetail);
 	}
 
 	@Override
