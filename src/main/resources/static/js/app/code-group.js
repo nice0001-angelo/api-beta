@@ -200,7 +200,7 @@ $(document).ready(function() {
 				alert("CodeDetail Deleting~!!");
 				$.ajax({
 					type : "DELETE",
-					url : "/codedetails/" + $("#groupCode").val()+"/"+$("codeValue").val(),
+					url : "/codedetails/" + $("#codeGroupCode").val()+"/"+$("codeValue").val(),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
 						alert("Deleted");
@@ -216,10 +216,10 @@ $(document).ready(function() {
 
 			//수정
 			$("#codeDetailModifyBtn").on("click", function() {
-				var groupCodeVal = $("#groupCode").val();
+				var codeGroupCodeVal = $("#codeGroupCode").val();
 				
-				var codeGroupObject = {
-					groupCode : groupCodeVal,
+				var codeGroupCodeObject = {
+					groupCode : codeGroupCodeVal,
 					groupName : $("#groupName").val()
 				};
 				
