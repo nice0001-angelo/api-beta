@@ -125,7 +125,7 @@ $(document).ready(function() {
 			
 			
 			//CodeDetail
-			//목록조회
+			//목록조회 List
 			$("#codeDetailListBtn").on("click",function() {
 				alert("CodeDetail List~!!");
 						$.ajax({
@@ -144,7 +144,7 @@ $(document).ready(function() {
 						});
 					});
 
-			//상세조회
+			//상세조회 Read
 			$("#codeDetailReadBtn").on("click",function(){
 				alert("Reading~!!");
 						$.ajax({
@@ -167,7 +167,7 @@ $(document).ready(function() {
 			});
 
 			
-			//등록
+			//등록 Register
 			$("#codeDetailRegisterBtn").on("click",function(){
 					var codeDetailObject = {
 							groupCode : $("#codeGroupCode").val(),
@@ -195,7 +195,7 @@ $(document).ready(function() {
 			});
 			
 		
-			//삭제
+			//삭제 Delete
 			$("#codeDetailDeleteBtn").on("click", function() {
 				alert("CodeDetail Deleting~!!");
 				$.ajax({
@@ -214,7 +214,7 @@ $(document).ready(function() {
 			});
 
 
-			//수정
+			//수정 Modify
 			$("#codeDetailModifyBtn").on("click", function() {
 				var codeGroupCodeVal = $("#codeGroupCode").val();
 				
@@ -240,7 +240,7 @@ $(document).ready(function() {
 				});
 			});
 			
-			//입력값 리셋
+			//입력값 리셋 Reset
 			$("#codeDetailResetBtn").on("click", function() {
 				alert("CodeDetail Resetting~!!");
 				$("#codeGroupCode").val("");
