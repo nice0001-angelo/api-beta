@@ -226,7 +226,7 @@ $(document).ready(function() {
 				alert("Modifying~!!");
 				$.ajax({
 					type : "PUT",
-					url : "/codegroups/" + groupCodeVal,
+					url : "/codeDetails/" + groupCodeVal,
 					data : JSON.stringify(codeGroupObject),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
