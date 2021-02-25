@@ -27,6 +27,17 @@ public class CodeDetailController {
 	@Autowired
 	private CodeDetailService codeDetailService;
 	
+
+	//목록조회
+	@RequestMapping(value ="", method = RequestMethod.GET)
+	public ResponseEntity<List<CodeDetail>> list() throws Exception{
+		
+		log.info("list");
+		
+		return new ResponseEntity<List<CodeDetail>>(codeDetailService.list(), HttpStatus.OK);  
+	}
+	
+	
 	//상세조회
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.GET)
 	public ResponseEntity<CodeDetail> read(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throws Exception {
@@ -39,15 +50,7 @@ public class CodeDetailController {
 		return new ResponseEntity<CodeDetail>(codeDetailService.read(codeDetail), HttpStatus.OK) ;
 	}
 	
-	//목록조회
-	@RequestMapping(value ="", method = RequestMethod.GET)
-	public ResponseEntity<List<CodeDetail>> list() throws Exception{
-		
-		log.info("list");
-		
-		return new ResponseEntity<List<CodeDetail>>(codeDetailService.list(), HttpStatus.OK);  
-	}
-	
+
 	//등록
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public ResponseEntity<CodeDetail> register(@Validated @RequestBody CodeDetail codeDetail) throws Exception {

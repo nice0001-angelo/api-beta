@@ -1,6 +1,7 @@
 $(document).ready(function() {
-			//CodeGroup
-			//목록조회
+
+	        //CodeGroup
+			//목록조회 List
 			$("#codeGroupListBtn").on("click",function() {
 				alert("List~!!");
 						$.ajax({
