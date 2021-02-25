@@ -20,7 +20,7 @@ $(document).ready(function() {
 						});
 					});
 
-			//상세조회 ㄲㄷㅁㅇ
+			//상세조회 read
 			$("#codeGroupReadBtn").on("click",function(){
 				alert("Reading~!!");
 						$.ajax({
@@ -30,7 +30,6 @@ $(document).ready(function() {
 							success : function(data){
 								console.log(data);
 								alert(JSON.stringify(data));
-								$("#groupCode").val("njh");
 								$("#groupName").val(data.groupName);
 							},
 							error : function(xhr, status, error){
@@ -136,7 +135,7 @@ $(document).ready(function() {
 							contentType : "application/json; charset=UTF-8",
 							success : function(data) {
 								console.log(data);
-								alert(JSON.stringify(data));
+								alert(JSON.stringify(data)); //url을 통해서 파라미터로 요청하고 받은 결과객체 List<CodeDetail>: 매퍼 참조
 							},
 							error : function(xhr, status, error) {
 								alert("code:" + xhr.status + "\n" 
