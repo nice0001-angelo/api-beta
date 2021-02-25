@@ -13,18 +13,22 @@ import net.jin.domain.*;
  */
 public interface CodeDetailService {
 
-	//등록
-	public void register(CodeDetail codeDetail) throws Exception;
-	
-	//상세조회
-	public CodeDetail read(CodeDetail codeDetail) throws Exception;
-	
-	//목록조회
+
+
+	//목록조회 List
 	public List<CodeDetail> list() throws Exception;
 	
-	//수정
+	//상세조회  Read
+	public CodeDetail read(CodeDetail codeDetail) throws Exception;
+
+	//등록 Register
+	public void register(CodeDetail codeDetail) throws Exception;
+	
+	//삭제 Delete
+	public void remove(CodeDetail codeDetail) throws Exception;	
+	
+	//수정 Modify
 	public void modify(CodeDetail codeDetail) throws Exception;
 	
-	//삭제
-	public void remove(CodeDetail codeDetail) throws Exception;
+
 }

@@ -8,7 +8,7 @@ $(document).ready(function() {
 							type : "GET",
 							url : "/codegroups",
 							contentType : "application/json; charset=UTF-8",
-							success : function(data) {
+							success : function(data) { //data: url에 들어가는 값을 자동 참조한다
 								console.log(data);
 								alert(JSON.stringify(data));
 							},
@@ -20,7 +20,7 @@ $(document).ready(function() {
 						});
 					});
 
-			//상세조회
+			//상세조회 ㄲㄷㅁㅇ
 			$("#codeGroupReadBtn").on("click",function(){
 				alert("Reading~!!");
 						$.ajax({
@@ -30,6 +30,7 @@ $(document).ready(function() {
 							success : function(data){
 								console.log(data);
 								alert(JSON.stringify(data));
+								$("#groupCode").val("njh");
 								$("#groupName").val(data.groupName);
 							},
 							error : function(xhr, status, error){

@@ -28,7 +28,7 @@ public class CodeDetailController {
 	private CodeDetailService codeDetailService;
 	
 
-	//목록조회
+	//목록조회 List
 	@RequestMapping(value ="", method = RequestMethod.GET)
 	public ResponseEntity<List<CodeDetail>> list() throws Exception{
 		
@@ -38,7 +38,7 @@ public class CodeDetailController {
 	}
 	
 	
-	//상세조회
+	//상세조회 Read
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.GET)
 	public ResponseEntity<CodeDetail> read(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throws Exception {
 		
@@ -51,7 +51,7 @@ public class CodeDetailController {
 	}
 	
 
-	//등록
+	//등록 Register
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public ResponseEntity<CodeDetail> register(@Validated @RequestBody CodeDetail codeDetail) throws Exception {
 		log.info("register");
@@ -64,7 +64,7 @@ public class CodeDetailController {
 		return new ResponseEntity<CodeDetail>(codeDetail, HttpStatus.OK);
 	}
 	
-	//수정
+	//수정 Modify
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> Modify(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue, @Validated @RequestBody CodeDetail codeDetail) throws Exception{
 	
@@ -76,7 +76,7 @@ public class CodeDetailController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
-	//삭제
+	//삭제 Delete
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> Delete(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throws Exception{
 		
