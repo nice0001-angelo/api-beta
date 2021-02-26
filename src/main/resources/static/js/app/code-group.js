@@ -48,7 +48,7 @@ $(document).ready(function() {
 							groupName : $("#groupName").val()
 					};
 					
-					alert("Registering~!!");
+					alert("CodeGroup Registering~!!");
 					alert(JSON.stringify(codeGroupObject));
 					
 					$.ajax({
