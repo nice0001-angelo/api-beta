@@ -53,7 +53,7 @@ INSERT INTO code_detail
  	#{groupCode},
  	#{codeValue},
  	#{codeName},
- 	#{sortSeq},
+ 	#{sortSeq}
  ) 
  
 </insert>
