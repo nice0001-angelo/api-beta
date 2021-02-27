@@ -82,7 +82,7 @@ AND code_value = #{codeValue}
 
 SELECT IFNULL(MAX(sort_seq),0)
 FROM code_detail
-WHERE groud_code = #{groupCode} 
+WHERE group_code = #{groupCode} 
 
 </select>
 

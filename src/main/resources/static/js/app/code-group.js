@@ -181,7 +181,7 @@ $(document).ready(function() {
 					
 					$.ajax({
 						type : "POST",
-						url : "/codegroups",
+						url : "/codedetails",
 						data : JSON.stringify(codeDetailObject),
 						contentType : "application/json; charset=UTF-8",
 						success : function(){
