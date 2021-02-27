@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	        //CodeGroup
-			//목록조회 List
+			//CodeGroup 목록조회 List
 			$("#codeGroupListBtn").on("click",function() {
 				alert("CodeGroup Listing~!!");
 						$.ajax({
@@ -20,7 +20,7 @@ $(document).ready(function() {
 						});
 					});
 
-			//상세조회 read
+			//CodeGroup 상세조회 read
 			$("#codeGroupReadBtn").on("click",function(){
 				alert("CodeGroup Reading~!!");
 						$.ajax({
@@ -41,7 +41,7 @@ $(document).ready(function() {
 			});
 
 			
-			//등록
+			//CodeGroup 등록
 			$("#codeGroupRegisterBtn").on("click",function(){
 					var codeGroupObject = {
 							groupCode : $("#groupCode").val(),
@@ -68,7 +68,7 @@ $(document).ready(function() {
 			});
 			
 		
-			//삭제
+			//CodeGroup 삭제
 			$("#codeGroupDeleteBtn").on("click", function() {
 				alert("Deleting~!!");
 				$.ajax({
@@ -87,7 +87,7 @@ $(document).ready(function() {
 			});
 
 
-			//수정
+			//CodeGroup 수정
 			$("#codeGroupModifyBtn").on("click", function() {
 				var groupCodeVal = $("#groupCode").val();
 				
@@ -113,7 +113,7 @@ $(document).ready(function() {
 				});
 			});
 			
-			//입력값 리셋
+			//CodeGroup 입력값 리셋
 			$("#codeGroupResetBtn").on("click", function() {
 				alert("CodeGroup Resetting~!!");
 				$("#groupCode").val("");
@@ -126,7 +126,7 @@ $(document).ready(function() {
 			
 			
 			//CodeDetail
-			//목록조회 List
+			//CodeDetail 목록조회 List
 			$("#codeDetailListBtn").on("click",function() {
 				alert("CodeDetail List~!!");
 						$.ajax({
@@ -145,7 +145,7 @@ $(document).ready(function() {
 						});
 					});
 
-			//상세조회 Read
+			//CodeDetail 상세조회 Read
 			$("#codeDetailReadBtn").on("click",function(){
 				alert("Reading~!!");
 						$.ajax({
@@ -168,7 +168,7 @@ $(document).ready(function() {
 			});
 
 			
-			//등록 Register
+			//CodeDetail 등록 Register
 			$("#codeDetailRegisterBtn").on("click",function(){
 					var codeDetailObject = {
 							groupCode : $("#codeGroupCode").val(),
@@ -196,7 +196,7 @@ $(document).ready(function() {
 			});
 			
 		
-			//삭제 Delete
+			//CodeDetail 삭제 Delete
 			$("#codeDetailDeleteBtn").on("click", function() {
 				alert("CodeDetail Deleting~!!");
 				$.ajax({
@@ -215,7 +215,7 @@ $(document).ready(function() {
 			});
 
 
-			//수정 Modify
+			//CodeDetail 수정 Modify
 			$("#codeDetailModifyBtn").on("click", function() {
 				var codeGroupCodeVal = $("#codeGroupCode").val();
 				
@@ -241,7 +241,7 @@ $(document).ready(function() {
 				});
 			});
 			
-			//입력값 리셋 Reset
+			//CodeDetail 입력값 리셋 Reset
 			$("#codeDetailResetBtn").on("click", function() {
 				alert("CodeDetail Resetting~!!");
 				$("#codeGroupCode").val("");

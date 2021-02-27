@@ -60,6 +60,7 @@ public class CodeDetailController {
 		
 		log.info("getGroupCode:"+codeDetail.getGroupCode());
 		log.info("getCodeValue:"+codeDetail.getCodeValue());
+		log.info("getCodeName:"+codeDetail.getCodeName());
 		
 		return new ResponseEntity<CodeDetail>(codeDetail, HttpStatus.OK);
 	}
