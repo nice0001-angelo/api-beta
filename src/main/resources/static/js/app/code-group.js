@@ -3,7 +3,7 @@ $(document).ready(function() {
 	        //CodeGroup
 			//목록조회 List
 			$("#codeGroupListBtn").on("click",function() {
-				alert("List~!!");
+				alert("CodeGroup Listing~!!");
 						$.ajax({
 							type : "GET",
 							url : "/codegroups",
@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 			//상세조회 read
 			$("#codeGroupReadBtn").on("click",function(){
-				alert("Reading~!!");
+				alert("CodeGroup Reading~!!");
 						$.ajax({
 							type : "GET",
 							url : "/codegroups/"+$("#groupCode").val(),
