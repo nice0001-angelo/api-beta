@@ -73,8 +73,11 @@ public class CodeDetailController {
 		
 		codeDetail.setGroupCode(groupCode);
 		codeDetail.setCodeValue(codeValue);
+
+		System.out.println("codeDetail: "+codeDetail);
 		
 		codeDetailService.remove(codeDetail);
+		
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}

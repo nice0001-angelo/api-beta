@@ -201,7 +201,7 @@ $(document).ready(function() {
 				alert("CodeDetail Deleting~!!");
 				$.ajax({
 					type : "DELETE",
-					url : "/codedetails/" + $("#codeGroupCode").val()+"/"+$("codeValue").val(),
+					url : "/codedetails/" + $("#codeGroupCode").val()+"/"+$("#codeValue").val(),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
 						alert("CodeDetail Deleted");
