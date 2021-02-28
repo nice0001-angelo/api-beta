@@ -64,7 +64,7 @@ INSERT INTO code_detail
 DELETE 
 FROM code_detail
 WHERE group_code = #{groupCode}
-AND code_value =#{codeValue} 
+AND code_value = #{codeValue} 
 
 </delete>
 

@@ -65,6 +65,20 @@ public class CodeDetailController {
 		return new ResponseEntity<CodeDetail>(codeDetail, HttpStatus.OK);
 	}
 	
+	//삭제 Delete
+	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> Delete(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throws Exception{
+		
+		CodeDetail codeDetail = new CodeDetail();
+		
+		codeDetail.setGroupCode(groupCode);
+		codeDetail.setCodeValue(codeValue);
+		
+		codeDetailService.remove(codeDetail);
+		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
+	
 	//수정 Modify
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> Modify(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue, @Validated @RequestBody CodeDetail codeDetail) throws Exception{
@@ -77,18 +91,6 @@ public class CodeDetailController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
-	//삭제 Delete
-	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.DELETE)
-	public ResponseEntity<Void> Delete(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue) throws Exception{
-		
-		CodeDetail codeDeTail = new CodeDetail();
-		
-		codeDeTail.setGroupCode(groupCode);
-		codeDeTail.setCodeValue(codeValue);
-		
-		codeDetailService.remove(codeDeTail);
-		
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-	}
+
 
 }

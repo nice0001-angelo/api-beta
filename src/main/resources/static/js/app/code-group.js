@@ -185,7 +185,7 @@ $(document).ready(function() {
 						data : JSON.stringify(codeDetailObject),
 						contentType : "application/json; charset=UTF-8",
 						success : function(){
-							alert("Created");
+							alert("CodeDetail Created");
 						},
 						error : function(xhr, textStatus, error){
 							alert("code:" + xhr.status + "\n"
@@ -204,7 +204,7 @@ $(document).ready(function() {
 					url : "/codedetails/" + $("#codeGroupCode").val()+"/"+$("codeValue").val(),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
-						alert("Deleted");
+						alert("CodeDetail Deleted");
 					},
 					error : function(xhr, status, error) {
 						alert("code:" + xhr.status + "\n"
