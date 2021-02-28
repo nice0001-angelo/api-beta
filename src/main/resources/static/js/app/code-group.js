@@ -227,6 +227,7 @@ $(document).ready(function() {
 				};
 				
 				alert("Modifying~!!");
+				alert("codeGroupCodeObject "+JSON.stringify(codeGroupCodeObject));
 				$.ajax({
 					type : "PUT",
 					url : "/codeDetails/" + codeGroupCodeVal +"/"+codeValueVal,
