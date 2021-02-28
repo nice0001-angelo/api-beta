@@ -218,17 +218,19 @@ $(document).ready(function() {
 			//CodeDetail 수정 Modify
 			$("#codeDetailModifyBtn").on("click", function() {
 				var codeGroupCodeVal = $("#codeGroupCode").val();
+				var codeValueVal = $("#codeValue").val();
 				
 				var codeGroupCodeObject = {
 					groupCode : codeGroupCodeVal,
-					groupName : $("#groupName").val()
+					codeValue : codeValueVal,
+					codeName : $("#codeName").val()
 				};
 				
 				alert("Modifying~!!");
 				$.ajax({
 					type : "PUT",
-					url : "/codeDetails/" + groupCodeVal,
-					data : JSON.stringify(codeGroupObject),
+					url : "/codeDetails/" + codeGroupCodeVal +"/"+codeValueVal,
+					data : JSON.stringify(codeGroupCodeObject),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
 						alert("Modified");
