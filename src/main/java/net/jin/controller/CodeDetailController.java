@@ -86,6 +86,7 @@ public class CodeDetailController {
 	@RequestMapping(value = "/{groupCode}/{codeValue}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> Modify(@PathVariable("groupCode") String groupCode, @PathVariable("codeValue") String codeValue, @Validated @RequestBody CodeDetail codeDetail) throws Exception{
 	
+		
 		codeDetail.setGroupCode(groupCode);
 		codeDetail.setCodeValue(codeValue);
 		

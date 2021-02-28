@@ -230,7 +230,7 @@ $(document).ready(function() {
 				alert("codeGroupCodeObject "+JSON.stringify(codeGroupCodeObject));
 				$.ajax({
 					type : "PUT",
-					url : "/codeDetails/" + codeGroupCodeVal +"/"+codeValueVal,
+					url : "/codedetails/" + codeGroupCodeVal +"/"+codeValueVal,
 					data : JSON.stringify(codeGroupCodeObject),
 					contentType : "application/json; charset=UTF-8",
 					success : function() {
