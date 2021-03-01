@@ -8,5 +8,5 @@ package net.jin.config;
  *
  */
 public class SecurityConfig {
-
+	public
 }
