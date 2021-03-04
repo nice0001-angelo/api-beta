@@ -32,10 +32,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
 	}
 	
-	@Bean
-	public PasswordEncoder createPasswordEncoder{
-		
-		return new BCryptPasswordEncoder();
-		
-	}
+	/*
+	 * @Bean public PasswordEncoder createPasswordEncoder{
+	 * 
+	 * return new BCryptPasswordEncoder();
+	 * 
+	 * }
+	 */
 }

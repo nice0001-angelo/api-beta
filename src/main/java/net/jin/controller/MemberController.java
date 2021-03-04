@@ -20,19 +20,20 @@ import net.jin.domain.*;
 @RequestMapping(value = "/users")
 public class MemberController {
 	
-	@Autowired
-	private MemberService memberservice;
-	
-	//비밀번호 암호 처리기
-	private PasswordEncoder passwordEncoder = new BCriptPasswordEncoder();
-	
-	//등록
-	@RequestMapping(value = "", method = RequestMethod.POST)
-	public RequestEntity<Member> register() throws Exception {
-		
-		
-		
-		return new RequestEntity<Member>(member, HttpStatus.OK);
-	}
+	/*
+	 * @Autowired private MemberService memberservice;
+	 * 
+	 * //비밀번호 암호 처리기 private PasswordEncoder passwordEncoder = new
+	 * BCriptPasswordEncoder();
+	 * 
+	 * //등록
+	 * 
+	 * @RequestMapping(value = "", method = RequestMethod.POST) public
+	 * RequestEntity<Member> register() throws Exception {
+	 * 
+	 * 
+	 * 
+	 * return new RequestEntity<Member>(member, HttpStatus.OK); }
+	 */
 
 }
