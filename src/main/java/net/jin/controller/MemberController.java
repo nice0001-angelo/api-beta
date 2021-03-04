@@ -4,6 +4,7 @@
 package net.jin.controller;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.crypto.password.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
@@ -22,5 +23,8 @@ public class MemberController {
 	
 	//비밀번호 암호 처리기
 	private PasswordEncoder passwordEncoder = new BCriptPasswordEncoder();
+	
+	//등록
+	@RequestMapping(value = "", method = RequestMethod.POST)
 
 }
