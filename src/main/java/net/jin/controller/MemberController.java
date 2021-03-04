@@ -4,10 +4,12 @@
 package net.jin.controller;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.*;
 import org.springframework.security.crypto.password.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
+import net.jin.domain.*;
 
 /**
  * @author njh
@@ -26,5 +28,11 @@ public class MemberController {
 	
 	//등록
 	@RequestMapping(value = "", method = RequestMethod.POST)
+	public RequestEntity<Member> register() throws Exception {
+		
+		
+		
+		return new RequestEntity<Member>(member, HttpStatus.OK);
+	}
 
 }
