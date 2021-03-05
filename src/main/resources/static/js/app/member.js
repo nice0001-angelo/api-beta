@@ -1,5 +1,14 @@
 $(document).ready(function(){
-	//목록조회
+	//member
+	//목록조회 List
+	$("#memberListBtn").on("click",function({
+	
+		
+		
+		
+	})
+		
+	)
 	
 	
 	
