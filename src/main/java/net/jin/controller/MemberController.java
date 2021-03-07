@@ -3,13 +3,15 @@
  */
 package net.jin.controller;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
-import org.springframework.security.crypto.password.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
 import net.jin.domain.*;
+import net.jin.service.*;
 
 /**
  * @author njh
@@ -37,8 +39,8 @@ public class MemberController {
 	 */
 
 	@RequestMapping(value ="", method = RequestMethod.GET)
-	public ReponseEntity<List<member>> list() throws Exception{
-		return new RequestEntity<List<member>>(memberservice.);
+	public ReponseEntity<List<Member>> list() throws Exception{
+		return new RequestEntity<List<Member>>(memberservice.list(), HttpStatus.OK);
 		
 	}
 }
