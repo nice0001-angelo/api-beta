@@ -27,7 +27,18 @@ $(document).ready(function(){
 		alert("member Read~~!!!");
 		$.ajax({
 			type: "GET",
-			url: "/users/"+$("#userId").val(),
+			url: "/users/"+$("#userNo").val(),
+			contentType: "application/json; charset=UTF-8",
+			success: function(data){
+				console.log(data);
+				
+				alert(JSON.stringify(data));
+			},
+			error: function(xhr, status, error){
+				alert("code: "+xhr.status+"\n"
+						+"message: "+xhr.reponseText+"\n"
+						+"error: "+error);
+			}
 		});
 	});
 	
