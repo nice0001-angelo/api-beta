@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	//member
 	//목록조회 list
-	$("#memberListBtn").on("Click",fucntion(){
+	$("#memberListBtn").on("click",function(){
 		alert("member listing~~~!!!")
 		$.ajax({
 			type: "GET",
