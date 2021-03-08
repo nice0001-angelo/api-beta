@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	//member
-	//목록조회 list
+	//전체목록조회 list
 	$("#memberListBtn").on("click",function(){
 		alert("member listing~~~!!!")
 		$.ajax({
@@ -22,7 +22,14 @@ $(document).ready(function(){
 		});
 	});
 	
-	//
+	//상세목록조회 Read
+	$("#memberReadBtn").on("click",function(){
+		alert("member Read~~!!!");
+		$.ajax({
+			type: "GET",
+			url: "/users/"+$("#userId").val(),
+		});
+	});
 	
 	
 });
