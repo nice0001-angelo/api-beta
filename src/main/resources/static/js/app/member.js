@@ -31,8 +31,12 @@ $(document).ready(function(){
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 				console.log(data);
-				
 				alert(JSON.stringify(data));
+				$("#userNo").val(data.userNo);
+				$("#userId").val(data.userId);
+				$("#userPassword").val(data.userPassword);
+				$("#userName").val(data.userName);
+				$("#job").val(data.job);				
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
