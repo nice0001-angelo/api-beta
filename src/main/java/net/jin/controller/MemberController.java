@@ -39,8 +39,8 @@ public class MemberController {
 	 */
 
 	@RequestMapping(value ="", method = RequestMethod.GET)
-	public ReponseEntity<List<Member>> list() throws Exception{
-		return new RequestEntity<List<Member>>(memberservice.list(), HttpStatus.OK);
+	public ResponseEntity<List<Member>> list() throws Exception{
+		return new ResponseEntity<List<Member>>(memberservice.list(), HttpStatus.OK);
 		
 	}
 }
