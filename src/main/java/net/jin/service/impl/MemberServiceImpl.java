@@ -25,6 +25,7 @@ public class MemberServiceImpl implements MemberService{
 	//목록조회
 	@Override
 	public List<Member> list() throws Exception{
+		System.out.println("MemberService Impl list: "+memberMapper.list());
 		return memberMapper.list();
 	}
 
