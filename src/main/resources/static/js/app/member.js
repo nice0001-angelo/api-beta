@@ -32,7 +32,6 @@ $(document).ready(function(){
 			success: function(data){
 				console.log(data);
 				alert(JSON.stringify(data));
-				$("#userNo").val(data.userNo);
 				$("#userId").val(data.userId);
 				$("#userPassword").val(data.userPassword);
 				$("#userName").val(data.userName);

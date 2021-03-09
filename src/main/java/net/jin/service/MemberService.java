@@ -5,6 +5,9 @@ package net.jin.service;
 
 import java.util.*;
 
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+
 import net.jin.domain.*;
 
 /**
@@ -13,8 +16,11 @@ import net.jin.domain.*;
  */
 public interface MemberService {
 
-	//목록조회
+	//목록조회  List
 	public List<Member> list() throws Exception;
 	
+	
+	//상세조회 Read
+	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception;
 
 }

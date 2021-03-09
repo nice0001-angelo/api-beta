@@ -43,4 +43,10 @@ public class MemberController {
 		return new ResponseEntity<List<Member>>(memberservice.list(), HttpStatus.OK);
 		
 	}
+	
+	@RequestMapping(value ="/{userNo}", method = RequestMethod.GET)
+	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception{
+		
+		memberservice.read(userId)
+	}
 }
