@@ -5,6 +5,19 @@
 <mapper namespace="net.jin.mapper.MemberMapper">
 
 
+<resultMap type="Member" id="memberMap">
+<id property="userNo" column="user_no"/>
+<result property="userNo" column="user_no"/>
+<result property="userId" column="user_id"/>
+<result property="userPassword" column="user_pw"/>
+<result property="userName" column="user_name"/>
+<result property="job" column="job"/>
+<result property="coin" column="coin"/>
+<result property="enabled" column="enabled"/>
+<result property="regDate" column="reg_date"/>
+<result property="updDate" column="upd_date"/>
+</resultMap>
+
 <!-- 목록조회 -->
 <select id="list" resultType="Member">
 
@@ -22,7 +35,7 @@ order by reg_date DESC
 
 
 <!-- 목록상세조회 -->
-<select id="read" resultType="Member">
+<select id="read" resultMap="MemberMap">
 
 SELECT user_no
 ,user_id
