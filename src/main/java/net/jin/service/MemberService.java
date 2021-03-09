@@ -21,6 +21,6 @@ public interface MemberService {
 	
 	
 	//상세조회 Read
-	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception;
+	public Member read(@PathVariable("userNo") int userNo) throws Exception;
 
 }

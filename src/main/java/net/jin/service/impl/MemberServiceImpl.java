@@ -23,7 +23,14 @@ public class MemberServiceImpl implements MemberService{
 	private MemberMapper memberMapper;
 	
 	//목록조회
+	@Override
 	public List<Member> list() throws Exception{
 		return memberMapper.list();
+	}
+
+	@Override
+	public Member read(int userNo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
