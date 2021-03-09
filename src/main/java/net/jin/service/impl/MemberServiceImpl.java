@@ -30,7 +30,6 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public Member read(int userNo) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return memberMapper.read();
 	}
 }

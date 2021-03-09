@@ -13,7 +13,10 @@ import net.jin.domain.*;
  */
 public interface MemberMapper {
 	
-	//목록조회
+	//목록조회 List
 	public List<Member> list() throws Exception;
+
+	//상세목록조회 Read
+	public Member read() throws Exception;
 
 }
