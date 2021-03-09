@@ -33,7 +33,8 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public Member read(@PathVariable("userNo") int userNo) throws Exception {
-		System.out.println("MemberServiceImpl userNo: "+memberMapper.read(userNo));
+		System.out.println("MemberServiceImpl userNo: "+userNo);
+		System.out.println("MemberServiceImpl memberMapper.read(userNo): "+memberMapper.read(userNo));
 		return memberMapper.read(userNo);
 	}
 }
