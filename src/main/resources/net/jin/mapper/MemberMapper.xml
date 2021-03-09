@@ -21,4 +21,21 @@ order by reg_date DESC
 </select>
 
 
+<!-- 목록상세조회 -->
+<select id="read" resultType="Member">
+
+SELECT user_no
+,user_id
+,user_pw
+,user_name
+,job
+,reg_date
+,upd_date
+FROM member
+WHERE user_no = #{userNo}
+
+
+</select>
+
+
 </mapper>
