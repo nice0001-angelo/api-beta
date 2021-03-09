@@ -21,6 +21,6 @@ public interface MemberService {
 	
 	
 	//상세조회 Read
-	public Member read(Member member) throws Exception;
+	public Member read(int userNo) throws Exception;
 
 }
