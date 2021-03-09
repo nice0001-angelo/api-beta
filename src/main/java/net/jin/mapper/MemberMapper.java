@@ -17,6 +17,6 @@ public interface MemberMapper {
 	public List<Member> list() throws Exception;
 
 	//상세목록조회 Read
-	public Member read() throws Exception;
+	public Member read(int userNo) throws Exception;
 
 }
