@@ -30,6 +30,8 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public Member read(int userNo) throws Exception {
+		System.out.println("MemberServiceImpl userNo: "+userNo);
+		System.out.println("MemberServiceImpl Member: "+memberMapper.read());
 		return memberMapper.read();
 	}
 }
