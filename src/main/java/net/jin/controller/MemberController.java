@@ -47,6 +47,8 @@ public class MemberController {
 	@RequestMapping(value ="/{userNo}", method = RequestMethod.GET)
 	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception{
 		
+		System.out.println("userNo: "+userNo);
+		
 		Member member = memberservice.read(userNo);
 		
 		return new ResponseEntity<Member>(member, HttpStatus.OK);
