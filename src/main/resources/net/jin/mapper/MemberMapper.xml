@@ -29,8 +29,8 @@ SELECT user_no
 ,coin
 ,reg_date
 FROM member
-where 1=1
-order by reg_date DESC 
+WHERE 1=1
+ORDER BY reg_date DESC 
 
 </select>
 
