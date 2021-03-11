@@ -29,6 +29,7 @@ SELECT user_no
 ,coin
 ,reg_date
 FROM member
+where 1=1
 order by reg_date DESC 
 
 </select>
@@ -46,7 +47,6 @@ SELECT user_no
 ,upd_date
 FROM member
 WHERE user_no = #{userNo}
-
 
 </select>
 
