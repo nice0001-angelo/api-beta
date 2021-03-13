@@ -22,21 +22,23 @@ public class CodeGroupServiceImpl implements CodeGroupService{
 	@Autowired
 	CodeGroupMapper codeGroupMapper;
 	
-	//상세조회
-	@Override
-	public CodeGroup read(String groupCode) throws Exception {
-		// TODO Auto-generated method stub
-		return codeGroupMapper.read(groupCode);
-	}
-
-	//목록조회
+	//select all
 	@Override
 	public List<CodeGroup> list() throws Exception {
 		// TODO Auto-generated method stub
 		return codeGroupMapper.list();
 	}
 
-	//등록
+	
+	//select by id
+	@Override
+	public CodeGroup read(String groupCode) throws Exception {
+		// TODO Auto-generated method stub
+		return codeGroupMapper.read(groupCode);
+	}
+
+
+	//create
 	@Override
 	public void register(CodeGroup codeGroup) throws Exception {
 		// TODO Auto-generated method stub
@@ -44,7 +46,14 @@ public class CodeGroupServiceImpl implements CodeGroupService{
 		
 	}
 
-	//수정
+	//delete
+	@Override
+	public void remove(String groupCode) throws Exception {
+		// TODO Auto-generated method stub
+		codeGroupMapper.delete(groupCode);
+	}
+
+	//update
 	@Override
 	public void modify(CodeGroup codeGroup) throws Exception {
 		// TODO Auto-generated method stub
@@ -52,11 +61,5 @@ public class CodeGroupServiceImpl implements CodeGroupService{
 		
 	}
 	
-	//삭제
-	@Override
-	public void remove(String groupCode) throws Exception {
-		// TODO Auto-generated method stub
-		codeGroupMapper.delete(groupCode);
-	}
 
 }

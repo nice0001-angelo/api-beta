@@ -88,7 +88,15 @@ public class CodeGroupController {
 	@Autowired
 	private CodeGroupService codeGroupService;
 	
-	//상세조회
+
+	
+	//select all
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public ResponseEntity<List<CodeGroup>> list() throws Exception{
+		return new ResponseEntity<List<CodeGroup>>(codeGroupService.list(), HttpStatus.OK);
+	}
+		
+	// select by id
 	@RequestMapping(value = "/{groupCode}", method = RequestMethod.GET)
 	public ResponseEntity<CodeGroup> read(@PathVariable("groupCode") String groupCode) throws Exception{
 		//CodeGroup codeGroup = codeGroupService.read(groupCode);
@@ -96,15 +104,8 @@ public class CodeGroupController {
 		return new ResponseEntity<CodeGroup>(codeGroupService.read(groupCode), HttpStatus.OK);
  	}
 	
-	//목록조회
-	@RequestMapping(value = "", method = RequestMethod.GET)
-	public ResponseEntity<List<CodeGroup>> list() throws Exception{
-		
-		
-		return new ResponseEntity<List<CodeGroup>>(codeGroupService.list(), HttpStatus.OK);
-	}
 
-	//등록
+	//create
 	@RequestMapping(value ="", method = RequestMethod.POST)
 	public ResponseEntity<CodeGroup> register(@Validated @RequestBody CodeGroup codeGroup) throws Exception{
 		log.info("register");
@@ -116,8 +117,8 @@ public class CodeGroupController {
 		return new ResponseEntity<CodeGroup>(codeGroup, HttpStatus.OK); 
 	}
 	
-	//삭제
-	@RequestMapping(value="{groupCode}", method = RequestMethod.DELETE)
+	//delete by id
+	@RequestMapping(value = "/{groupCode}", method = RequestMethod.DELETE)	
 	public ResponseEntity<Void> remove(@PathVariable("groupCode") String groupCode) throws Exception {
 		
 		codeGroupService.remove(groupCode);
@@ -125,7 +126,7 @@ public class CodeGroupController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
-	//수정
+	//	update
 	@RequestMapping(value="{groupCode}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> modify(@PathVariable("groupCode") String groupCode, 
 			@Validated @RequestBody CodeGroup codeGroup) throws Exception{

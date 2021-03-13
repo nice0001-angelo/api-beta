@@ -13,20 +13,23 @@ import net.jin.domain.*;
  */
 public interface CodeGroupService {
 	
-	//상세조회
+
+	//select all
+	public List<CodeGroup> list() throws Exception;
+	
+	//select by id
 	public CodeGroup read(String groupCode) throws Exception;
 	
-	//목록조회
-	public List<CodeGroup> list() throws Exception;
-
-	//등록
+	//create
 	public void register(CodeGroup codeGroup) throws Exception;
 	
-	//수정
+	//delete by id
+	public void remove(String groupCode) throws Exception;
+	
+	//update
 	public void modify(CodeGroup codeGroup) throws Exception;
 	
-	//삭제
-	public void remove(String groupCode) throws Exception;
+
 	
 
 
