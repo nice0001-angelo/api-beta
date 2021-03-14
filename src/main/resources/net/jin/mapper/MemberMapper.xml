@@ -38,7 +38,7 @@ ORDER BY reg_date DESC
 
 
 <!-- 목록상세조회 -->
-<select id="read" resultMap="memberMap">
+<select id="read" resultType="Member">
 
 SELECT user_no
 ,user_id

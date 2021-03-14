@@ -37,13 +37,15 @@ public class MemberController {
 	 * 
 	 * return new RequestEntity<Member>(member, HttpStatus.OK); }
 	 */
-
+	
+	//List all
 	@RequestMapping(value ="", method = RequestMethod.GET)
 	public ResponseEntity<List<Member>> list() throws Exception{
 		return new ResponseEntity<List<Member>>(memberservice.list(), HttpStatus.OK);
 		
 	}
 	
+	//Read by userNo
 	@RequestMapping(value ="/{userNo}", method = RequestMethod.GET)
 	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception{
 		

@@ -16,11 +16,11 @@ import net.jin.domain.*;
  */
 public interface MemberService {
 
-	//목록조회  List
+	//List all
 	public List<Member> list() throws Exception;
 	
 	
-	//상세조회 Read
+	//Read by userNo
 	public Member read(int userNo) throws Exception;
 
 }

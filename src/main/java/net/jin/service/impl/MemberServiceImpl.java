@@ -24,14 +24,14 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberMapper memberMapper;
 	
-	//목록조회 List
+	//List all
 	@Override
 	public List<Member> list() throws Exception{
 		System.out.println("MemberService Impl list: "+memberMapper.list());
 		return memberMapper.list();
 	}
 
-	//상세조회 Read
+	//Read by userNo
 	@Override
 	public Member read(@PathVariable("userNo") int userNo) throws Exception {
 		System.out.println("MemberServiceImpl userNo: "+userNo);

@@ -33,7 +33,7 @@ $(document).ready(function(){
 				console.log(data);
 				alert(JSON.stringify(data));
 				$("#userId").val(data.userId);
-				$("#userPassword").val(data.userPassword);
+				$("#userPassword").val(data.userPw);
 				$("#userName").val(data.userName);
 				$("#job").val(data.job);				
 			},
