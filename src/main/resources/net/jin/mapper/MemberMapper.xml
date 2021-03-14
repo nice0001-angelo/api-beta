@@ -18,6 +18,8 @@
 <result property="updDate" column="upd_date"/>
 </resultMap>
 
+ 
+ 
 <!-- 목록조회 -->
 <select id="list" resultType="Member">
 
@@ -36,7 +38,7 @@ ORDER BY reg_date DESC
 
 
 <!-- 목록상세조회 -->
-<select id="read" resultMap="MemberMap">
+<select id="read" resultMap="memberMap">
 
 SELECT user_no
 ,user_id
