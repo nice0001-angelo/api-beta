@@ -38,4 +38,10 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("MemberServiceImpl memberMapper.read(userNo): "+memberMapper.read(userNo));
 		return memberMapper.read(userNo);
 	}
+	
+	//insert
+	@Override
+	public void register(Member member) throws Exception{
+		memberMapper.create(member);
+	}
 }

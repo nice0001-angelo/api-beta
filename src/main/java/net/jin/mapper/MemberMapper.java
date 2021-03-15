@@ -21,5 +21,8 @@ public interface MemberMapper {
 
 	//Read by userNo
 	public Member read(int userNo) throws Exception;
+	
+	//insert
+	public void create(Member member) throws Exception;
 
 }

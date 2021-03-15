@@ -22,5 +22,8 @@ public interface MemberService {
 	
 	//Read by userNo
 	public Member read(int userNo) throws Exception;
+	
+	//insert
+	public void register(Member member) throws Exception;
 
 }

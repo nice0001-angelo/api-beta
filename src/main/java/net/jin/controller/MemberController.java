@@ -5,7 +5,6 @@ package net.jin.controller;
 
 import java.util.*;
 
-import org.graalvm.compiler.api.replacements.Snippet.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.validation.annotation.*;
@@ -61,7 +60,8 @@ public class MemberController {
 	//insert all
 	@RequestMapping(value="", method = RequestMethod.POST)
 	public ResponseEntity<Member> register(@Validated @RequestBody Member member) throws Exception {
-
+		
+		
 		return new ResponseEntity<Member>(member, HttpStatus.OK); 
 		
 	}

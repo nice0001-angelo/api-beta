@@ -52,5 +52,22 @@ WHERE user_no = #{userNo}
 
 </select>
 
+<!--insert  -->
+<insert id="create">
+INSERT INTO member
+(
+user_id
+,user_pw
+,user_name
+,job
+)
+VALUES
+(
+#{userId},
+#{userPw},
+#{userName},
+#{job}
+)
+</insert>
 
 </mapper>
