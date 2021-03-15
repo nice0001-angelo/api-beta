@@ -47,7 +47,30 @@ $(document).ready(function(){
 	
 	//등록 Insert
 	$("#memberRegisterBtn").on("click",function(){
+		alert("member insert~!!!");
+		var memberObject = {
+			userNo = $("#userNo").val();
+			userId = $("#userId").val();
+			userPw = $("#userPassword").val();
+			userName = $("#userName").val();
+				
+		};
 		
+		$.ajax({
+			type: "POST",
+			url: "/users",
+			contentType: "application/json; charset=UTF-8",
+			success: function(data){
+				console.log(data);
+				alert(JSON.stringify(data));
+			},
+			error: fucntion(xhr, status, error){
+				alert("code: "+xhr.status+"\n"
+						+"message: "+xhr.reponseText+"\n"
+						+"error: "+error);
+			}
+			
+		})
 		
 	});
 	
