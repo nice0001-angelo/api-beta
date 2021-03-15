@@ -46,36 +46,31 @@ $(document).ready(function(){
 	});
 	
 	//등록 Insert
-/*	$("#memberRegisterBtn").on("click",function(){
-		alert("member insert~!!!");
+	$("#memberRegisterBtn").on("click", function() {
 		var memberObject = {
-			userId: $("#userId").val(),
-			userPw: $("#userPassword").val(),
-			userName:  $("#userName").val(),
-			job: $("#job").val()
-		};
+				userId: $("#userId").val(),
+				userPw: $("#userPassword").val(),
+				userName:  $("#userName").val(),
+				job: $("#job").val()
+			};
 		
 		alert("JSON.stringify(memberObject): "+JSON.stringify(memberObject));
-		
+
 		$.ajax({
 			type: "POST",
 			url: "/users",
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
 			success: function(){
-				console.log(data);
-				alert("memberObject: "+data);
-				alert("Created~~!!");
+					console.log(data);
+					alert("memberObject: "+data);
+					alert("Created~~!!");
 			},
-			error: fucntion(xhr, status, error){
+			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
 						+"message: "+xhr.reponseText+"\n"
 						+"error: "+error);
 			}
-			
 		});
-		
-	});*/
-	
-	
+	});
 });
