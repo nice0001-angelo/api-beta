@@ -49,20 +49,20 @@ $(document).ready(function(){
 	$("#memberRegisterBtn").on("click",function(){
 		alert("member insert~!!!");
 		var memberObject = {
-			userNo = $("#userNo").val();
 			userId = $("#userId").val();
 			userPw = $("#userPassword").val();
 			userName = $("#userName").val();
-				
+			job = $("#job").val();
 		};
 		
 		$.ajax({
 			type: "POST",
 			url: "/users",
+			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 				console.log(data);
-				alert(JSON.stringify(data));
+				alert("memberObject:"+data);
 			},
 			error: fucntion(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
