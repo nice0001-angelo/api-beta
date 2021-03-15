@@ -45,5 +45,11 @@ $(document).ready(function(){
 		});
 	});
 	
+	//등록 Insert
+	$("#memberRegisterBtn").on("click",function(){
+		
+		
+	});
+	
 	
 });
