@@ -5,8 +5,10 @@ package net.jin.controller;
 
 import java.util.*;
 
+import org.graalvm.compiler.api.replacements.Snippet.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
@@ -56,6 +58,12 @@ public class MemberController {
 		return new ResponseEntity<Member>(member, HttpStatus.OK);
 	}
 	
+	//insert all
+	@RequestMapping(value="", method = RequestMethod.POST)
+	public ResponseEntity<Member> create(@Validated @RequestBody Member member) {
+		return new ResponseEntity<Member>(member, HttpStatus.OK); 
+		
+	}
 	
 
 }
