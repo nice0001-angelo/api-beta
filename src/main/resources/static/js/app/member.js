@@ -46,25 +46,25 @@ $(document).ready(function(){
 	});
 	
 	//등록 Insert
-	$("#memberRegisterBtn").on("click",function(){
+/*	$("#memberRegisterBtn").on("click",function(){
 		alert("member insert~!!!");
 		var memberObject = {
-			userId = $("#userId").val();
-			userPw = $("#userPassword").val();
-			userName = $("#userName").val();
-			job = $("#job").val();
+			userId: $("#userId").val(),
+			userPw: $("#userPassword").val(),
+			userName:  $("#userName").val(),
+			job: $("#job").val()
 		};
 		
-		alert("JSON.stringify(memberObject): "+memberObject);
+		alert("JSON.stringify(memberObject): "+JSON.stringify(memberObject));
 		
 		$.ajax({
 			type: "POST",
 			url: "/users",
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
-			success: function(data){
+			success: function(){
 				console.log(data);
-				alert("memberObject:"+data);
+				alert("memberObject: "+data);
 				alert("Created~~!!");
 			},
 			error: fucntion(xhr, status, error){
@@ -73,9 +73,9 @@ $(document).ready(function(){
 						+"error: "+error);
 			}
 			
-		})
+		});
 		
-	});
+	});*/
 	
 	
 });
