@@ -60,7 +60,8 @@ public class MemberController {
 	
 	//insert all
 	@RequestMapping(value="", method = RequestMethod.POST)
-	public ResponseEntity<Member> create(@Validated @RequestBody Member member) {
+	public ResponseEntity<Member> register(@Validated @RequestBody Member member) throws Exception {
+
 		return new ResponseEntity<Member>(member, HttpStatus.OK); 
 		
 	}
