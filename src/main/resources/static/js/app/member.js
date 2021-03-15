@@ -55,6 +55,8 @@ $(document).ready(function(){
 			job = $("#job").val();
 		};
 		
+		alert("JSON.stringify(memberObject): "+memberObject);
+		
 		$.ajax({
 			type: "POST",
 			url: "/users",
@@ -63,6 +65,7 @@ $(document).ready(function(){
 			success: function(data){
 				console.log(data);
 				alert("memberObject:"+data);
+				alert("Created~~!!");
 			},
 			error: fucntion(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
