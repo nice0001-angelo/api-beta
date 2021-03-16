@@ -61,7 +61,7 @@ $(document).ready(function(){
 			url: "/users",
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
-			success: function(){
+			success: function(data){
 					console.log(data);
 					alert("memberObject: "+data);
 					alert("Created~~!!");
