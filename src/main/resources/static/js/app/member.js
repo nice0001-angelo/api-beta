@@ -73,4 +73,26 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+	
+	//delete by id
+	$("#memberDeleteBtn").on("click",fucntion(){
+		$.ajax({
+			type: "DELETE",
+			url: "/users"+${"#userId"}.val(),
+			contentType: "application/json; charset=UTF-8",
+			success: function(data){
+				console.log(data);
+				alert("data: "+data);
+				alert("Deleted~!!!")
+			},
+			error: function(xhr, status, error){
+				alert("code: "+xhr.status+"\n"
+						+"message: "+xhr.reponseText+"\n"
+						+"error: "+error);
+			}
+			
+		});
+		
+	});
 });
