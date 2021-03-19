@@ -69,10 +69,10 @@ public class MemberController {
 		
 	}
 	
-	//delete by id
+	//delete by userNo
 	@RequestMapping(value="/{UserNo}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable("UserNo") int userNo) throws Exception{
-		
+		System.out.println("MemberController delete by userNo: "+userNo);
 		memberService.delete(userNo);
 	}
 
