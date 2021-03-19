@@ -6,7 +6,6 @@ package net.jin.service.impl;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.http.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,7 +46,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	//delete by userNo
 	@Override
-	public void delete(int UserNo) throws Exception{
+	public void delete(int userNo) throws Exception{
 		memberMapper.delete(userNo);
 	}
 }

@@ -24,5 +24,8 @@ public interface MemberMapper {
 	
 	//insert
 	public void create(Member member) throws Exception;
+	
+	//delete by userNo
+	public void delete(int userNo) throws Exception;
 
 }

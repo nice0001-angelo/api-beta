@@ -70,4 +70,12 @@ VALUES
 )
 </insert>
 
+<delete id="delete">
+
+DELETE *
+FROM MEMBER
+WHERE USER_NO = #{userNo}
+
+</delete>
+
 </mapper>
