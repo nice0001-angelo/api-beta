@@ -79,7 +79,7 @@ $(document).ready(function(){
 	});
 	
 	
-	//delete by id
+	//delete by userNo
 	$("#memberDeleteBtn").on("click",function(){
 		$.ajax({
 			type: "DELETE",
@@ -101,6 +101,7 @@ $(document).ready(function(){
 	});
 	
 	
+	//update by userNo
 	$("#memberModifyBtn").on("click",function(){
 		var userNo: $("#userNo").val();
 		
@@ -130,4 +131,15 @@ $(document).ready(function(){
 		});
 		
 	});
+	
+	
+	//reset
+	$("#memberResetBtn").on("click",function(){
+		$("#userNo").val();
+		$("#userId").val();
+		$("#userPassword").val();
+		$("#userName").val();
+		$("#job").val();
+	});
+	
 });
