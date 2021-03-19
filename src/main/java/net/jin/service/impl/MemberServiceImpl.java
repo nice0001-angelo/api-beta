@@ -50,4 +50,11 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("MemberServiceImpl delete by userNo: "+userNo);
 		memberMapper.delete(userNo);
 	}
+	
+	//update by unserNo
+	@Override
+	public void update(Member member) throws Exception{
+		System.out.println("MemberServiceImpl update Member"+member);
+	}
 }
+
