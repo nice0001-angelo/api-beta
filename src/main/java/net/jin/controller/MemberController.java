@@ -78,5 +78,7 @@ public class MemberController {
 	
 	//update by userNo
 	@RequestMapping(value = "/{userNo}", method = RequestMethod.PUT)
-	public void update(@PathVariable("userNo") String userNo @PathVariable(""))
+	public void update(@PathVariable("userNo") int userNo, @Validated @RequestBody Member member) throws Exception{
+		
+	}
 }

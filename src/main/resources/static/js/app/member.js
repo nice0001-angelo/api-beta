@@ -135,11 +135,11 @@ $(document).ready(function(){
 	
 	//reset
 	$("#memberResetBtn").on("click",function(){
-		$("#userNo").val();
-		$("#userId").val();
-		$("#userPassword").val();
-		$("#userName").val();
-		$("#job").val();
+		$("#userNo").val("");
+		$("#userId").val("");
+		$("#userPassword").val("");
+		$("#userName").val("");
+		$("#job").val("");
 	});
 	
 });
