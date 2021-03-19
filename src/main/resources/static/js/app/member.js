@@ -102,23 +102,25 @@ $(document).ready(function(){
 	
 	
 	$("#memberModifyBtn").on("click",function(){
+		var userNo: $("#userNo").val();
+		
 		var memberObject = {
-				userNo: $("#userNo").val(),
 				userId: $("#userId").val(),
 				userPassword: $("#userPassword").val(),
 				userName: $("#userName").val(),
 				job: $("#job").val()
-		}
+		};
 		
 		alert("JSON.stringify(memberObject) :"+JSON.stringify(memberObject));
 		
 		$.ajax({
 			type: "PUT",
-			url: "/user/"+$("#userId").val(),
+			url: "/users/"+userNo,
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
 			success: function(memberObject){
 				alert("memberObject: "+memberObject);
+				alert("member Modified~!!!");
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"

@@ -70,10 +70,13 @@ public class MemberController {
 	}
 	
 	//delete by userNo
-	@RequestMapping(value="/{UserNo}", method = RequestMethod.DELETE)
-	public void delete(@PathVariable("UserNo") int userNo) throws Exception{
+	@RequestMapping(value="/{userNo}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable("userNo") int userNo) throws Exception{
 		System.out.println("MemberController delete by userNo: "+userNo);
 		memberService.delete(userNo);
 	}
-
+	
+	//update by userNo
+	@RequestMapping(value = "/{userNo}", method = RequestMethod.PUT)
+	public void update(@PathVariable("userNo") String userNo @PathVariable(""))
 }
