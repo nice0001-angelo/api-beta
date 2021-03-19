@@ -83,7 +83,7 @@ $(document).ready(function(){
 	$("#memberDeleteBtn").on("click",function(){
 		$.ajax({
 			type: "DELETE",
-			url: "/users"+$("#userNo").val(),
+			url: "/users/"+$("#userNo").val(),
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 				console.log(data);
@@ -96,6 +96,31 @@ $(document).ready(function(){
 						+"error: "+error);
 			}
 			
+		});
+		
+	});
+	
+	
+	$("#memberModifyBtn").on("click",function(){
+		var memberObject ={
+				
+		}
+		
+		$.ajax({
+			type: "PUT",
+			url: "/user/"+${"#userId"}.val(),
+			contentType: "application/json; charset=UTF-8",
+			success: function(){
+				alert("")
+				
+			}
+				
+			},
+			error: function(xhr, status, error){
+				alert("code: "+xhr.status+"\n"
+						+"message: "+xhr.reponseText+"\n"
+						+"error: "+error);
+		
 		});
 		
 	});

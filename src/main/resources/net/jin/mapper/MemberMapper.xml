@@ -72,7 +72,7 @@ VALUES
 
 <delete id="delete">
 
-DELETE *
+DELETE
 FROM MEMBER
 WHERE USER_NO = #{userNo}
 
