@@ -39,9 +39,15 @@ public class MemberServiceImpl implements MemberService{
 		return memberMapper.read(userNo);
 	}
 	
-	//insert
+	//insert all
 	@Override
 	public void register(Member member) throws Exception{
 		memberMapper.create(member);
+	}
+	
+	//delete by userNo
+	@Override
+	public void delete(int UserNo) throws Exception{
+		memberMapper.delete(userNo);
 	}
 }

@@ -25,5 +25,8 @@ public interface MemberService {
 	
 	//insert
 	public void register(Member member) throws Exception;
+	
+	//delete by userNo
+	public void delete(int userNo) throws Exception;
 
 }

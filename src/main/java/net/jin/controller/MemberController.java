@@ -24,7 +24,7 @@ import net.jin.service.*;
 public class MemberController {
 	
 	
-	  @Autowired private MemberService memberservice;
+	  @Autowired private MemberService memberService;
 	  
 	 /* //비밀번호 암호 처리기 private PasswordEncoder passwordEncoder = new
 	 * BCriptPasswordEncoder();
@@ -42,7 +42,7 @@ public class MemberController {
 	//List all
 	@RequestMapping(value ="", method = RequestMethod.GET)
 	public ResponseEntity<List<Member>> list() throws Exception{
-		return new ResponseEntity<List<Member>>(memberservice.list(), HttpStatus.OK);
+		return new ResponseEntity<List<Member>>(memberService.list(), HttpStatus.OK);
 		
 	}
 	
@@ -52,7 +52,7 @@ public class MemberController {
 		
 		System.out.println("MemberController userNo: "+userNo);
 		
-		Member member = memberservice.read(userNo);
+		Member member = memberService.read(userNo);
 		
 		return new ResponseEntity<Member>(member, HttpStatus.OK);
 	}
@@ -63,11 +63,17 @@ public class MemberController {
 		
 		System.out.println("MemberController register member:"+member);
 		
-		memberservice.register(member);
+		memberService.register(member);
 		
 		return new ResponseEntity<Member>(member, HttpStatus.OK); 
 		
 	}
 	
+	//delete by id
+	@RequestMapping(value="/{UserNo}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable("UserNo") int userNo) throws Exception{
+		
+		memberService.delete(userNo);
+	}
 
 }
