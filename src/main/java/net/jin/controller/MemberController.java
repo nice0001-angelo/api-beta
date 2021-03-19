@@ -81,5 +81,7 @@ public class MemberController {
 	public void update(@PathVariable("userNo") int userNo, @Validated @RequestBody Member member) throws Exception{
 		System.out.println("MemberController update userNo: "+userNo);
 		System.out.println("MemberController update Member: "+member);
+		
+		memberService.update(member);
 	}
 }

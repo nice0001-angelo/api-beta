@@ -107,7 +107,7 @@ $(document).ready(function(){
 		
 		var memberObject = {
 				userId: $("#userId").val(),
-				userPassword: $("#userPassword").val(),
+				userPw: $("#userPassword").val(),
 				userName: $("#userName").val(),
 				job: $("#job").val()
 		};
