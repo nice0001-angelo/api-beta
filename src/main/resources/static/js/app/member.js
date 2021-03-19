@@ -79,7 +79,7 @@ $(document).ready(function(){
 	$("#memberDeleteBtn").on("click",fucntion(){
 		$.ajax({
 			type: "DELETE",
-			url: "/users"+${"#userId"}.val(),
+			url: "/users"+${"#userNo"}.val(),
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 				console.log(data);
