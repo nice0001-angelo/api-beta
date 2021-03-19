@@ -3,12 +3,15 @@ $(document).ready(function(){
 	//member
 	//전체목록조회 list
 	$("#memberListBtn").on("click",function(){
-		alert("member listing~~~!!!")
+		
 		$.ajax({
 			type: "GET",
 			url: "/users",
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
+				
+				alert("member listing~~~success !!!")
+				
 				console.log(data);
 				
 				alert(JSON.stringify(data));
@@ -24,12 +27,13 @@ $(document).ready(function(){
 	
 	//상세목록조회 Read
 	$("#memberReadBtn").on("click",function(){
-		alert("member Read~~!!!");
+
 		$.ajax({
 			type: "GET",
 			url: "/users/"+$("#userNo").val(),
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
+				alert("member Read~~success !!!");
 				console.log(data);
 				alert(JSON.stringify(data));
 				$("#userId").val(data.userId);
@@ -64,7 +68,7 @@ $(document).ready(function(){
 			success: function(data){
 					console.log(data);
 					alert("memberObject: "+data);
-					alert("Created~~!!");
+					alert("Created~~success!!");
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
@@ -76,10 +80,10 @@ $(document).ready(function(){
 	
 	
 	//delete by id
-	$("#memberDeleteBtn").on("click",fucntion(){
+	$("#memberDeleteBtn").on("click",function(){
 		$.ajax({
 			type: "DELETE",
-			url: "/users"+${"#userNo"}.val(),
+			url: "/users"+$("#userNo").val(),
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 				console.log(data);
