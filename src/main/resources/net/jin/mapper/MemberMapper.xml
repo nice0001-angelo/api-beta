@@ -78,4 +78,12 @@ WHERE USER_NO = #{userNo}
 
 </delete>
 
+<update id="update">
+
+
+
+
+
+</update>
+
 </mapper>
