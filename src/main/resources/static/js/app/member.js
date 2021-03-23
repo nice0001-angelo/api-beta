@@ -140,6 +140,7 @@ $(document).ready(function(){
 		$("#userPassword").val("");
 		$("#userName").val("");
 		$("#job").val("");
+		$("#job").val("");
 	});
 	
 });

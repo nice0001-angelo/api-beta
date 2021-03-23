@@ -81,7 +81,7 @@ WHERE USER_NO = #{userNo}
 <update id="update">
 
 UPDDATE SET MEMBER
-SET 
+SET
 USER_ID = #{userId},
 USER_PW = #{userPw}, 
 USER_NAME = #{userName},
