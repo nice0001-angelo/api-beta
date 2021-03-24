@@ -82,6 +82,8 @@ public class MemberController {
 		System.out.println("MemberController update userNo: "+userNo);
 		System.out.println("MemberController update Member: "+member);
 		
+		member.setUserNo(userNo);
+		
 		memberService.update(member);
 	}
 }
