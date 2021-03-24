@@ -121,7 +121,7 @@ $(document).ready(function(){
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
 			success: function(memberObject){
-				alert("memberObject: "+memberObject);
+				alert("memberObject: "+JSON.stringify(memberObject));
 				alert("member Modified~!!!");
 			},
 			error: function(xhr, status, error){

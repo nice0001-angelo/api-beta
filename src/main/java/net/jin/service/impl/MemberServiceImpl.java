@@ -54,7 +54,7 @@ public class MemberServiceImpl implements MemberService{
 	//update by unserNo
 	@Override
 	public void update(Member member) throws Exception{
-		System.out.println("MemberServiceImpl update Member"+member);
+		System.out.println("MemberServiceImpl update Member: "+member);
 		memberMapper.update(member);
 	}
 }
