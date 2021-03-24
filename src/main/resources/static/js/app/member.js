@@ -106,6 +106,7 @@ $(document).ready(function(){
 		var userNo = $("#userNo").val();
 		
 		var memberObject = {
+				userNo: $("#userNo").val(),
 				userId: $("#userId").val(),
 				userPw: $("#userPassword").val(),
 				userName: $("#userName").val(),
@@ -139,7 +140,6 @@ $(document).ready(function(){
 		$("#userId").val("");
 		$("#userPassword").val("");
 		$("#userName").val("");
-		$("#job").val("");
 		$("#job").val("");
 	});
 	
