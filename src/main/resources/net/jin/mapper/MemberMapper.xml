@@ -80,12 +80,12 @@ WHERE USER_NO = #{userNo}
 
 <update id="update">
 
-UPDDATE SET MEMBER
+UPDATE SET MEMBER
 SET
 USER_ID = #{userId},
 USER_PW = #{userPw}, 
 USER_NAME = #{userName},
-JOB = #{job}
+JOB = '1'
 WHERE USER_NO = #{userNo}
 
 </update>
