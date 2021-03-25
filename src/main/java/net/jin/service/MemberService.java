@@ -20,7 +20,7 @@ public interface MemberService {
 	public List<Member> list() throws Exception;
 	
 	//Read by userNo
-	public void read(int userNo) throws Exception;
+	public Member read(int userNo) throws Exception;
 	
 	//insert
 	public void register(Member member) throws Exception;

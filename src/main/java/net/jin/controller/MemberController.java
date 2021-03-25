@@ -35,13 +35,13 @@ public class MemberController {
 	
 	//Read by userNo
 	@RequestMapping(value ="/{userNo}", method = RequestMethod.GET)
-	public ResponseEntity<void> read(@PathVariable("userNo") int userNo) throws Exception{
+	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception{
 		
 		System.out.println("MemberController userNo: "+userNo);
 		
 		Member member = memberService.read(userNo);
 		
-		return new ResponseEntity<>(member, HttpStatus.OK);
+		return new ResponseEntity<Member>(member, HttpStatus.OK);
 	}
 
 	//insert all
