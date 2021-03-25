@@ -26,19 +26,6 @@ public class MemberController {
 	
 	  @Autowired private MemberService memberService;
 	  
-	 /* //비밀번호 암호 처리기 private PasswordEncoder passwordEncoder = new
-	 * BCriptPasswordEncoder();
-	 * 
-	 * //등록
-	 * 
-	 * @RequestMapping(value = "", method = RequestMethod.POST) public
-	 * RequestEntity<Member> register() throws Exception {
-	 * 
-	 * 
-	 * 
-	 * return new RequestEntity<Member>(member, HttpStatus.OK); }
-	 */
-	
 	//List all
 	@RequestMapping(value ="", method = RequestMethod.GET)
 	public ResponseEntity<List<Member>> list() throws Exception{
@@ -48,13 +35,13 @@ public class MemberController {
 	
 	//Read by userNo
 	@RequestMapping(value ="/{userNo}", method = RequestMethod.GET)
-	public ResponseEntity<Member> read(@PathVariable("userNo") int userNo) throws Exception{
+	public ResponseEntity<void> read(@PathVariable("userNo") int userNo) throws Exception{
 		
 		System.out.println("MemberController userNo: "+userNo);
 		
 		Member member = memberService.read(userNo);
 		
-		return new ResponseEntity<Member>(member, HttpStatus.OK);
+		return new ResponseEntity<>(member, HttpStatus.OK);
 	}
 
 	//insert all

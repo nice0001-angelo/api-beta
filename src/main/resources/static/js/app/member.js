@@ -49,7 +49,7 @@ $(document).ready(function(){
 		});
 	});
 	
-	//등록 Insert
+	//Insert all
 	$("#memberRegisterBtn").on("click", function() {
 		var memberObject = {
 				userId: $("#userId").val(),
