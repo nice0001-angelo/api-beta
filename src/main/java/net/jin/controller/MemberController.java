@@ -65,12 +65,14 @@ public class MemberController {
 	
 	//update by userNo
 	@RequestMapping(value = "/{userNo}", method = RequestMethod.PUT)
-	public void update(@PathVariable("userNo") int userNo, @Validated @RequestBody Member member) throws Exception{
+	public ResponseEntity<Void> update(@PathVariable("userNo") int userNo, @Validated @RequestBody Member member) throws Exception{
 		System.out.println("MemberController update userNo: "+userNo);
 		System.out.println("MemberController update Member: "+member);
 		
 		member.setUserNo(userNo);
 		
 		memberService.update(member);
+		
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 }
