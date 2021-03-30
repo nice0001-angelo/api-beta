@@ -46,13 +46,13 @@ public class MemberController {
 
 	//insert all
 	@RequestMapping(value="", method = RequestMethod.POST)
-	public ResponseEntity<Member> register(@Validated @RequestBody Member member) throws Exception {
+	public void register(@Validated @RequestBody Member member) throws Exception {
 		
 		System.out.println("MemberController register member:"+member);
 		
 		memberService.register(member);
 		
-		return new ResponseEntity<Member>(member, HttpStatus.OK); 
+		//return new ResponseEntity<Member>(member, HttpStatus.OK); 
 		
 	}
 	
