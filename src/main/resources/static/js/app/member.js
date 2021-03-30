@@ -67,7 +67,7 @@ $(document).ready(function(){
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 					console.log(data);
-					alert("memberObject: "+data);
+					alert("memberObject after success: "+JSON.stringify(data));
 					alert("Created~~success!!");
 			},
 			error: function(xhr, status, error){
