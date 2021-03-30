@@ -28,8 +28,8 @@ public class MemberController {
 	  
 	//List all
 	@RequestMapping(value ="", method = RequestMethod.GET)
-	public void list() throws Exception{
-		//return new ResponseEntity<List<Member>>(memberService.list(), HttpStatus.OK);
+	public ResponseEntity<List<Member>> list() throws Exception{
+		return new ResponseEntity<List<Member>>(memberService.list(), HttpStatus.OK);
 		
 	}
 	
