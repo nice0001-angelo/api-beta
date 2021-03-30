@@ -42,4 +42,6 @@ public class Member {
 	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date updDate;
+	
+	private List<MemberAuth> memberAuthList;
 }
