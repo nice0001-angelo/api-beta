@@ -7,6 +7,8 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
+import org.springframework.security.crypto.bcrypt.*;
+import org.springframework.security.crypto.password.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +26,13 @@ import net.jin.service.*;
 public class MemberController {
 	
 	
-	  @Autowired private MemberService memberService;
+	@Autowired 
+	private MemberService memberService;
+	  
+	  
+	//비밀번호 암호 처리기
+	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();  
+	 
 	  
 	//List all
 	@RequestMapping(value ="", method = RequestMethod.GET)
@@ -50,6 +58,11 @@ public class MemberController {
 		
 		System.out.println("MemberController register member:"+member);
 		
+		//비밀번호 암호화
+		String inputPassword = member.getUserPw();
+		member.setUserPw(passwordEncoder.encode(inputPassword));
+
+		//member객체를 memberService에 송부
 		memberService.register(member);
 		
 		return new ResponseEntity<Member>(member, HttpStatus.OK); 
