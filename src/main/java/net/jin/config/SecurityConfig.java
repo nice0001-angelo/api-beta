@@ -24,19 +24,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception{
 		log.info("Security Configuring....");
 		
-		//CSRF 방지 지원 기능 활성화
+		//CSRF 방지 지원 기능 비활성화
 		httpSecurity.csrf().disable();
 	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
+	
 	}
 	
-	/*
-	 * @Bean public PasswordEncoder createPasswordEncoder{
-	 * 
-	 * return new BCryptPasswordEncoder();
-	 * 
-	 * }
-	 */
+	//비밀번호 암호처리기 생성
+	@Bean
+	public PasswordEncoder createPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	
+	
 }
