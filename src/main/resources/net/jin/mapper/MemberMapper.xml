@@ -53,7 +53,7 @@ WHERE user_no = #{userNo}
 </select>
 
 <!--insert  -->
-<insert id="create">
+<insert id="create" useGeneratedKeys="true" keyProperty="userNo">
 INSERT INTO member
 (
 user_id
