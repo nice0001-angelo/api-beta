@@ -14,7 +14,7 @@ $(document).ready(function(){
 				
 				console.log(data);
 				
-				alert(JSON.stringify(data));
+				alert(data);
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
@@ -87,7 +87,7 @@ $(document).ready(function(){
 			contentType: "application/json; charset=UTF-8",
 			success: function(data){
 				console.log(data);
-				alert("data: "+data);
+				alert("data: "+JSON.stringify(data));
 				alert("Deleted~!!!")
 			},
 			error: function(xhr, status, error){
