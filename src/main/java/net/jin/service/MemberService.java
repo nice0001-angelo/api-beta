@@ -29,5 +29,5 @@ public interface MemberService {
 	public void remove(int userNo) throws Exception;
 
 	//update by userNo
-	public void update(Member member) throws Exception;
+	public void modify(Member member) throws Exception;
 }

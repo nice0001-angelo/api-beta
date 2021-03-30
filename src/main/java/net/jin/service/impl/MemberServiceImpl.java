@@ -7,6 +7,7 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
+import org.springframework.transaction.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import net.jin.domain.*;
@@ -39,12 +40,14 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	//insert all
+	@Transactional
 	@Override
 	public void register(Member member) throws Exception{
 		memberMapper.create(member);
 	}
 	
 	//delete by userNo
+	@Transactional
 	@Override
 	public void remove(int userNo) throws Exception{
 		System.out.println("MemberServiceImpl delete by userNo: "+userNo);
@@ -52,8 +55,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	//update by unserNo
+	@Transactional
 	@Override
-	public void update(Member member) throws Exception{
+	public void modify(Member member) throws Exception{
 		System.out.println("MemberServiceImpl update Member: "+member);
 		memberMapper.update(member);
 	}
