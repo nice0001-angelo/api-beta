@@ -21,6 +21,6 @@ public class MemberAuth {
 	private int userNo;
 	
 	@NotBlank
-	private String auto;
+	private String auth;
 
 }

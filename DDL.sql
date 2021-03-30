@@ -33,7 +33,7 @@ user_no int(5) auto_increment
 
 create table member_auth(
 user_no int(5) not null
-,auto varchar(50) not null
+,auth varchar(50) not null
 );
 
 alter table member_auth add constraint fk_member_auth_user_no 
