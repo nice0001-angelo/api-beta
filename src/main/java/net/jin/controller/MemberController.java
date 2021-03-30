@@ -60,7 +60,7 @@ public class MemberController {
 	@RequestMapping(value="/{userNo}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> delete(@PathVariable("userNo") int userNo) throws Exception{
 		System.out.println("MemberController delete by userNo: "+userNo);
-		memberService.delete(userNo);
+		memberService.remove(userNo);
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
