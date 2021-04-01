@@ -67,7 +67,7 @@ public class MemberController {
 		//member객체를 memberService에 송부
 		memberService.register(member);
 		
-		return new ResponseEntity<Member>(member, HttpStatus.OK); 
+		return new ResponseEntity<Member>(member, HttpStatus.OK);
 		
 	}
 	
