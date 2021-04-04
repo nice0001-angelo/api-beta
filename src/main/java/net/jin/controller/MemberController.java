@@ -73,11 +73,12 @@ public class MemberController {
 	
 	//delete by userNo
 	@RequestMapping(value="/{userNo}", method = RequestMethod.DELETE)
-	public ResponseEntity<String> delete(@PathVariable("userNo") int userNo) throws Exception{
+	public ResponseEntity<Void> delete(@PathVariable("userNo") int userNo) throws Exception{
 		System.out.println("MemberController delete by userNo: "+userNo);
 		memberService.remove(userNo);
 		
-		return new ResponseEntity<String>("finally deleted~!",HttpStatus.NO_CONTENT); //왜 View에 finally deleted~! 이 안 찍히는지 확인필요
+		//return new ResponseEntity<String>("finally deleted~!",HttpStatus.NO_CONTENT); //왜 View에 finally deleted~! 이 안 찍히는지 확인필요
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	//update by userNo
