@@ -17,5 +17,6 @@ public interface CodeMapper {
 	public List<CodeLabelValue> getCodeGroupList() throws Exception;
 	
 	//지정된 그룹코드 목록 조회
+	public List<CodeLabelValue> getCodeGroupList(String codeGroup) throws Exception;
 
 }
