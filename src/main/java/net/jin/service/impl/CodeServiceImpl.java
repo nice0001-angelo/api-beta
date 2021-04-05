@@ -24,9 +24,9 @@ public class CodeServiceImpl implements CodeService{
 
 	//그룹코드목록조회
 	@Override
-	public List<CodeLabelValue> getCodeGroupList() throws Exception {
+	public List<CodeLabelValue> getCodeGroupList(String codeGroup) throws Exception {
 		// TODO Auto-generated method stub
-		return codeMapper.getCodeGroupList();
+		return codeMapper.getCodeGroupList(codeGroup);
 	}
 	
 	 
