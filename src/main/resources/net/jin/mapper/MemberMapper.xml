@@ -16,6 +16,7 @@
 <result property="enabled" column="enabled"/>
 <result property="regDate" column="reg_date"/>
 <result property="updDate" column="upd_date"/>
+<collection property="authList" resultMap="authMap"></collection>
 </resultMap>
 
  
@@ -86,7 +87,7 @@ SET
 USER_ID = #{userId},
 USER_PW = #{userPw}, 
 USER_NAME = #{userName},
-JOB = '1'
+JOB = #{job}
 WHERE USER_NO = #{userNo}
 
 </update>
@@ -106,5 +107,12 @@ VALUES
 
 
 </insert>
+
+<delete id="deleteAuth">
+
+DELETE FROM member_auth
+WHERE user_no = #{userNo}
+
+</delete>
 
 </mapper>
