@@ -33,7 +33,11 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value = "/job", method = RequestMethod.GET)
-	public ResponseEntity<list<CodeLabelValue>> jobList() throws Exception{
+	public ResponseEntity<List<CodeLabelValue>> jobList() throws Exception{
+		
+		String groupCode = "A01";
+		
+		return ResponseEntity<list<CodeLabelValue>(codeService.getCodeGroupList(groupCode),HttpStatus.OK);
 		
 	}
 
