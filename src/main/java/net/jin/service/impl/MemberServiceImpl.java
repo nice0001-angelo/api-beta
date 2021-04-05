@@ -43,12 +43,15 @@ public class MemberServiceImpl implements MemberService{
 	@Transactional
 	@Override
 	public void register(Member member) throws Exception{
+		
 		memberMapper.create(member);
 		
 		MemberAuth memberAuth = new MemberAuth();
 		
 		memberAuth.setUserNo(member.getUserNo());
 		memberAuth.setAuth("ROLE_MEMBER");
+		
+		System.out.println("MemberServiceImpl register(Member member) ==> memberAuth: "+memberAuth);
 		
 		memberMapper.createAuth(memberAuth);
 		
