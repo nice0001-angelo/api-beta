@@ -44,6 +44,15 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void register(Member member) throws Exception{
 		memberMapper.create(member);
+		
+		MemberAuth memberAuth = new MemberAuth();
+		
+		memberAuth.setUserNo(member.getUserNo());
+		memberAuth.setAuth("ROLE_MEMBER");
+		
+		memberMapper.
+		
+		
 	}
 	
 	//delete by userNo
