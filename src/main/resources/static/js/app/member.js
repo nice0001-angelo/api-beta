@@ -39,7 +39,18 @@ $(document).ready(function(){
 				$("#userId").val(data.userId);
 				$("#userPassword").val(data.userPassword);
 				$("#userName").val(data.userName);
-				$("#job").val(data.job);				
+				$("#job").val(data.job);
+				if(data.authList[0]){
+					$("#memberAuth0").val(data.authList[0].auth);
+				}
+				
+				if(data.authList[1]){
+					$("#memberAuth1").val(data.authList[1].auth);
+				}
+				
+				if(data.authList[2]){
+					$("#memberAuth2").val(data.authList[2].auth);
+				}
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
