@@ -142,4 +142,14 @@ $(document).ready(function(){
 		$("#job").val("");
 	});
 	
+	
+	//화면 초기값 로딩
+	$.getJSON("/codes/job", function(list){
+		$(list).each(function(){
+			var str = "<option value= '"+ this.value + "'>" + this.label + "</option>";
+			$("#job").append(str);
+		});
+			
+	});
+	
 });
