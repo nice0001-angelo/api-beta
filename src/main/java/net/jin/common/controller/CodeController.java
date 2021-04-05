@@ -31,5 +31,10 @@ public class CodeController {
 		
 		return new ResponseEntity<List<CodeLabelValue>>(codeService.getCodeGroupList(), HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/job", method = RequestMethod.GET)
+	public ResponseEntity<list<CodeLabelValue>> jobList() throws Exception{
+		
+	}
 
 }
