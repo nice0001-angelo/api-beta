@@ -78,7 +78,13 @@ public class MemberServiceImpl implements MemberService{
 		
 		memberMapper.deleteAuth(userNo);
 		
-		member.getMemberAuthList()
+		List<MemberAuth> memberAuthList = member.getMemberAuthList();
+		
+		for(int i =0; i < memberAuthList.size(); i++) {
+			MemberAuth memberAuth = memberAuthList.get(i);
+			
+			String auth = memberAuth.getAuth();
+		}
 	}
 	
 	
