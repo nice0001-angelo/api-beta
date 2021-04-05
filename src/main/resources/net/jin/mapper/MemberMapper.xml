@@ -40,15 +40,16 @@ ORDER BY reg_date DESC
 <!-- 목록상세조회 -->
 <select id="read" resultType="Member">
 
-SELECT user_no
+SELECT mem.user_no
 ,user_id
 ,user_pw
 ,user_name
 ,job
 ,reg_date
 ,upd_date
-FROM member
-WHERE user_no = #{userNo}
+,auth.auth
+FROM member mem LEFT OUTER JOIN member_auth auth ON mem.user_no = auth.user_no
+WHERE mem.user_no = #{userNo}
 
 </select>
 

@@ -29,7 +29,7 @@ public class CodeServiceImpl implements CodeService{
 		return codeMapper.getCodeGroupList();
 	}
 	
-	//지정된 그룹코드읭 상세 목록조회
+	//지정된 그룹코드의 상세 목록조회
 	@Override
 	public List<CodeLabelValue> getCodeGroupList(String codeGroup) throws Exception {
 		// TODO Auto-generated method stub
