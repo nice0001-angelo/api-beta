@@ -120,7 +120,21 @@ $(document).ready(function(){
 				userId: $("#userId").val(),
 				userPw: $("#userPassword").val(),
 				userName: $("#userName").val(),
-				job: $("#job").val()
+				job: $("#job").val(),
+				authList:[
+					{
+						userNo: userNoVal,
+						auth: $("#memberAuth0").val()
+					},
+					{
+						userNo: userNoVal,
+						auth: $("#memberAuth1").val()
+					},
+					{
+						userNo: userNoVal,
+						auth: $("#memberAuth2").val()
+					}
+				]
 		};
 		
 		alert("JSON.stringify(memberObject) :"+JSON.stringify(memberObject));
@@ -151,6 +165,9 @@ $(document).ready(function(){
 		$("#userPassword").val("");
 		$("#userName").val("");
 		$("#job").val("");
+		$("#memberAuth0").val("");
+		$("#memberAuth1").val("");
+		$("#memberAuth2").val("");
 	});
 	
 	
