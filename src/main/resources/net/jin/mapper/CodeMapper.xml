@@ -14,5 +14,14 @@ order by group_name
 
 </select>
 
+<!--코드목록 조회-->
+<select id="getCodeList" resultType="net.jin.common.domain.CodeLabelValue">
+SELECT code_value as value
+      ,code_name as label
+FROM code_detail
+WHERE group_code = #{groupCode}
+ORDER BY sort_seq
+</select>
+
 
 </mapper>
