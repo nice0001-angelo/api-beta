@@ -27,7 +27,7 @@ SELECT user_no
 ,user_id
 ,user_pw
 ,user_name
-,(SELECT code_name FROM code_detail WHERE group_code = "A01" AND code_value = job) AS job
+,(SELECT code_name FROM code_detail WHERE group_code = "A01" AND code_value = 'job') AS job
 ,coin
 ,reg_date
 FROM member
