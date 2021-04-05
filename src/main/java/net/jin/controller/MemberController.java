@@ -68,7 +68,6 @@ public class MemberController {
 		memberService.register(member);
 		
 		return new ResponseEntity<Member>(member, HttpStatus.OK);
-		
 	}
 	
 	//delete by userNo

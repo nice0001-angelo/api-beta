@@ -14,7 +14,7 @@ $(document).ready(function(){
 				
 				console.log(data);
 				
-				alert(data);
+				alert(JSON.stringify(data));
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
