@@ -22,7 +22,7 @@ public interface MemberMapper {
 	//Read by userNo
 	public Member read(int userNo) throws Exception;
 	
-	//insert
+	//insert Member
 	public void create(Member member) throws Exception;
 	
 	//delete by userNo
@@ -30,5 +30,8 @@ public interface MemberMapper {
 	
 	//update by userNo
 	public void update(Member member) throws Exception;
+	
+	//insert Auth
+	public void createAuth(MemberAuth memberAuth) throws Exception;
 
 }

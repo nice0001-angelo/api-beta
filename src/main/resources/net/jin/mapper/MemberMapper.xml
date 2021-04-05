@@ -90,4 +90,23 @@ WHERE USER_NO = #{userNo}
 
 </update>
 
+<insert id="createAuth">
+INSERT INTO memberAuth
+(
+user_id
+,user_pw
+,user_name
+,job
+)
+VALUES
+(
+#{userId},
+#{userPw},
+#{userName},
+#{job}
+)
+
+
+</insert>
+
 </mapper>
