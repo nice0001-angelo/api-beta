@@ -37,7 +37,8 @@ public class CodeController {
 		
 		String groupCode = "A01";
 		
-		return ResponseEntity<list<CodeLabelValue>(codeService.getCodeGroupList(groupCode),HttpStatus.OK);
+	
+		return ResponseEntity<list<CodeLabelValue>>(codeService.getCodeGroupList(groupCode),HttpStatus.OK);
 		
 	}
 

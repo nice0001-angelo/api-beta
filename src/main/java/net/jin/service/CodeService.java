@@ -14,4 +14,6 @@ import net.jin.common.domain.*;
 public interface CodeService {
 
 	public List<CodeLabelValue> getCodeGroupList() throws Exception;
+	
+	public List<CodeLabelValue> getCodeGroupList(String codeGroup) throws Exception;
 }
