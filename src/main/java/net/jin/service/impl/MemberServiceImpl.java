@@ -72,6 +72,16 @@ public class MemberServiceImpl implements MemberService{
 	public void modify(Member member) throws Exception{
 		System.out.println("MemberServiceImpl update Member: "+member);
 		memberMapper.update(member);
+		
+		//회원권한 수정
+		int userNo = member.getUserNo();
+		
+		memberMapper.deleteAuth(userNo);
+		
+		member.getMemberAuthList()
 	}
+	
+	
+	
 }
 
