@@ -50,7 +50,7 @@ public class MemberServiceImpl implements MemberService{
 		memberAuth.setUserNo(member.getUserNo());
 		memberAuth.setAuth("ROLE_MEMBER");
 		
-		memberMapper.
+		memberMapper.createAuth(memberAuth);
 		
 		
 	}

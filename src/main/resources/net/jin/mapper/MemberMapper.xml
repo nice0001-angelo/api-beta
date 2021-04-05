@@ -91,19 +91,16 @@ WHERE USER_NO = #{userNo}
 </update>
 
 <insert id="createAuth">
-INSERT INTO memberAuth
+
+INSERT INTO member_auth
 (
-user_id
-,user_pw
-,user_name
-,job
+user_no
+,auth
 )
 VALUES
 (
-#{userId},
-#{userPw},
-#{userName},
-#{job}
+#{userNo},
+#{auth},
 )
 
 
