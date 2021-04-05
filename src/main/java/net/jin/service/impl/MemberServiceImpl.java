@@ -63,6 +63,8 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void remove(int userNo) throws Exception{
 		System.out.println("MemberServiceImpl delete by userNo: "+userNo);
+		
+		memberMapper.deleteAuth(userNo);
 		memberMapper.delete(userNo);
 	}
 	
@@ -84,6 +86,18 @@ public class MemberServiceImpl implements MemberService{
 			MemberAuth memberAuth = memberAuthList.get(i);
 			
 			String auth = memberAuth.getAuth();
+			
+			if(auth == null) {
+				continue;
+			}
+			
+			if(auth.trim().length() == 0) {
+				continue;
+			}
+			
+			memberAuth.setUserNo(userNo);
+			
+			memberMapper.createAuth(memberAuth);
 		}
 	}
 	

@@ -34,4 +34,7 @@ public interface MemberMapper {
 	//insert Auth
 	public void createAuth(MemberAuth memberAuth) throws Exception;
 
+	//deleteAuth by userNo
+	public void deleteAuth(int userNo) throws Exception;
+
 }
