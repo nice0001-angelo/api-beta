@@ -114,7 +114,7 @@ $(document).ready(function(){
 	
 	//update by userNo
 	$("#memberModifyBtn").on("click",function(){
-		var userNo = $("#userNo").val();
+		var userNoVal = $("#userNo").val();
 		
 		var memberObject = {
 				userId: $("#userId").val(),
