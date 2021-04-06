@@ -49,7 +49,6 @@ public class MemberController {
 		
 		System.out.println("MemberController userNo: "+userNo);
 		
-		//Member member = memberService.read(userNo); 아래에  memberService.read(userNo)를 직접 넣어도 됨 
 		
 		return new ResponseEntity<Member>(memberService.read(userNo), HttpStatus.OK);
 	}

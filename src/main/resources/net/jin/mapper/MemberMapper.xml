@@ -42,7 +42,7 @@ ORDER BY reg_date DESC
 <select id="read" resultType="Member">
 
 SELECT mem.user_no
-,user_id
+,mem.user_id
 ,user_pw
 ,user_name
 ,job
