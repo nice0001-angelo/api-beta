@@ -44,6 +44,8 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void register(Member member) throws Exception{
 		
+		System.out.println("MemberServiceImpl register(Member member) ==> member: "+member);
+		
 		memberMapper.create(member);
 		
 		MemberAuth memberAuth = new MemberAuth();

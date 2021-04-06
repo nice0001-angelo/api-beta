@@ -22,7 +22,7 @@ public interface MemberService {
 	//Read by userNo
 	public Member read(int userNo) throws Exception;
 	
-	//insert
+	//insert all
 	public void register(Member member) throws Exception;
 	
 	//delete by userNo
