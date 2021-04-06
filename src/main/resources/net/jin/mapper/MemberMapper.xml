@@ -16,7 +16,7 @@
 <result property="enabled" column="enabled"/>
 <result property="regDate" column="reg_date"/>
 <result property="updDate" column="upd_date"/>
-<collection property="authList" resultMap="authMap"></collection>
+<collection property="memberAuthList" resultMap="authMap"></collection>
 </resultMap>
 
  
@@ -39,7 +39,7 @@ ORDER BY reg_date DESC
 
 
 <!-- 목록상세조회 -->
-<select id="read" resultType="Member">
+<select id="read" resultMap="memberMap">
 
 SELECT mem.user_no
 ,mem.user_id
