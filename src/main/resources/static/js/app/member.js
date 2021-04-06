@@ -40,16 +40,16 @@ $(document).ready(function(){
 				$("#userPassword").val(data.userPassword);
 				$("#userName").val(data.userName);
 				$("#job").val(data.job);
-				if(data.authList[0]){
-					$("#memberAuth0").val(data.authList[0].auth);
+				if(data.memberAuthList[0]){
+					$("#memberAuth0").val(data.memberAuthList[0].auth);
 				}
 				
-				if(data.authList[1]){
-					$("#memberAuth1").val(data.authList[1].auth);
+				if(data.memberAuthList[1]){
+					$("#memberAuth1").val(data.memberAuthList[1].auth);
 				}
 				
-				if(data.authList[2]){
-					$("#memberAuth2").val(data.authList[2].auth);
+				if(data.memberAuthList[2]){
+					$("#memberAuth2").val(data.memberAuthList[2].auth);
 				}
 			},
 			error: function(xhr, status, error){
@@ -121,7 +121,7 @@ $(document).ready(function(){
 				userPw: $("#userPassword").val(),
 				userName: $("#userName").val(),
 				job: $("#job").val(),
-				authList:[
+				memberAuthList:[
 					{
 						userNo: userNoVal,
 						auth: $("#memberAuth0").val()
