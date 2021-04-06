@@ -102,7 +102,7 @@ user_no
 VALUES
 (
 #{userNo},
-#{auth},
+#{auth}
 )
 
 
