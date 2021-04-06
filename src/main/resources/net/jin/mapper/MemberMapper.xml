@@ -9,7 +9,7 @@
 <id property="userNo" column="user_no"/>
 <result property="userNo" column="user_no"/>
 <result property="userId" column="user_id"/>
-<result property="userPassword" column="user_pw"/>
+<result property="userPw" column="user_pw"/>
 <result property="userName" column="user_name"/>
 <result property="job" column="job"/>
 <result property="coin" column="coin"/>
@@ -17,6 +17,13 @@
 <result property="regDate" column="reg_date"/>
 <result property="updDate" column="upd_date"/>
 <collection property="memberAuthList" resultMap="authMap"></collection>
+</resultMap>
+
+<resultMap type="MemberAuth" id="authMap">
+
+<result property="userNo" column="user_no"/>
+<result property="auth" column="auth"/>
+
 </resultMap>
 
  
