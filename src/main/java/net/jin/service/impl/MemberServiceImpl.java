@@ -84,6 +84,8 @@ public class MemberServiceImpl implements MemberService{
 		
 		List<MemberAuth> memberAuthList = member.getMemberAuthList();
 		
+		System.out.println("MemberServiceImpl update memberAuthList: "+memberAuthList );
+		
 		for(int i =0; i < memberAuthList.size(); i++) {
 			MemberAuth memberAuth = memberAuthList.get(i);
 			

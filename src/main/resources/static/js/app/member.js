@@ -141,7 +141,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type: "PUT",
-			url: "/users/"+userNo,
+			url: "/users/"+userNoVal,
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
 			success: function(memberObject){
