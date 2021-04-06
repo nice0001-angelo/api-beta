@@ -19,6 +19,7 @@
 <collection property="memberAuthList" resultMap="authMap"></collection>
 </resultMap>
 
+
 <resultMap type="MemberAuth" id="authMap">
 
 <result property="userNo" column="user_no"/>

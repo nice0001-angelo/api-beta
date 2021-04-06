@@ -144,8 +144,8 @@ $(document).ready(function(){
 			url: "/users/"+userNoVal,
 			data: JSON.stringify(memberObject),
 			contentType: "application/json; charset=UTF-8",
-			success: function(memberObject){
-				alert("memberObject: "+JSON.stringify(memberObject));
+			success: function(data){
+				alert("after success JSON.stringify(data): "+JSON.stringify(data));
 				alert("member Modified~!!!");
 			},
 			error: function(xhr, status, error){
