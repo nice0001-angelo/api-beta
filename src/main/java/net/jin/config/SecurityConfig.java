@@ -24,8 +24,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception{
 		log.info("Security Configuring....");
 		
+		//스프링 Security 설정
+
+		//CORS 설정
+		httpSecurity.cors();
+		
 		//CSRF 방지 지원 기능 비활성화
 		httpSecurity.csrf().disable();
+		
+		//
 	}
 	
 	@Override
