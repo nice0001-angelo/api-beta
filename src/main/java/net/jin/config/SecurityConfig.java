@@ -11,6 +11,7 @@ import org.springframework.security.config.http.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.bcrypt.*;
 import org.springframework.security.crypto.password.*;
+import org.springframework.web.cors.*;
 
 import lombok.extern.java.*;
 
@@ -25,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception{
 		log.info("Security Configuring....");
+		
 		
 		//스프링 Security 설정
 		//CORS 설정
@@ -59,6 +61,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public UserDetailsService createUserDetailsService() {
 		return new CustomUserDetailsService();
+	}
+	
+	//CORS 설정
+	@Bean
+	public CorsConfigurationSource corsConfigurationSource() {
+		final UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+		
+		CorsConfiguration corsConfiguration = new CorsConfiguration();
+		corsConfiguration.setAllowCredentials(true);
+		
 	}
 	
 	
