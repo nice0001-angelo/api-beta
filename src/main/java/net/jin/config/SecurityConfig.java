@@ -3,6 +3,8 @@
  */
 package net.jin.config;
 
+import java.util.*;
+
 import org.springframework.context.annotation.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.*;
@@ -70,6 +72,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
+		corsConfiguration.addAllowedOrigin("*");
+		corsConfiguration.addAllowedHeader("*");
+		corsConfiguration.addAllowedMethod("OPTION");
+		corsConfiguration.addAllowedMethod("HEAD");
+		corsConfiguration.addAllowedHeader("GET");
+		corsConfiguration.addAllowedMethod("PUT");
+		corsConfiguration.addAllowedMethod("POST");
+		corsConfiguration.addAllowedMethod("DELETE");
+		corsConfiguration.setExposedHeaders(Arrays.asList("Authorization","Content-Disposition"));
+		
+		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config);
+		
+		return urlBasedCorsConfigurationSource;
 		
 	}
 	
