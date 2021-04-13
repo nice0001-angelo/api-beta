@@ -71,6 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		final UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		
 		System.out.println("CORS Bean");
+		
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
 		corsConfiguration.addAllowedOrigin("*");
@@ -84,7 +85,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		corsConfiguration.setExposedHeaders(Arrays.asList("Authorization","Content-Disposition"));
 		
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config);
-		
+		System.out.println("CORS Bean");
 		return urlBasedCorsConfigurationSource;
 		
 	}
