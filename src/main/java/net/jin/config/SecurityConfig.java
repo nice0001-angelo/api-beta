@@ -86,6 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config);
 		System.out.println("CORS Bean");
+		System.out.println("CORS Bean");
 		return urlBasedCorsConfigurationSource;
 		
 	}
