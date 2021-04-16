@@ -16,5 +16,13 @@ import net.jin.mapper.*;
 public class CustomUserDetailsService extends UserDatailsService {
 
 	@Autowired
-	public MemberMapper memberMapper; 
+	public MemberMapper memberMapper;
+	
+	@Override
+	public UserDeatails loadUserByUsername(String userName) throws UsernameNotFoundException{
+		log.info("userName: "+userName);
+		
+		Member mebmer = memberMapper.readByUserId(userName);
+	}
+	
 }
