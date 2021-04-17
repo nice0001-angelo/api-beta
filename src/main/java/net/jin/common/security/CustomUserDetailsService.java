@@ -18,11 +18,16 @@ public class CustomUserDetailsService extends UserDatailsService {
 	@Autowired
 	public MemberMapper memberMapper;
 	
+	//사용자정보조회
 	@Override
 	public UserDeatails loadUserByUsername(String userName) throws UsernameNotFoundException{
 		log.info("userName: "+userName);
 		
 		Member mebmer = memberMapper.readByUserId(userName);
+		
+		log.info("member: "+member);
+		
+		return member == null ? null : new CustomUser(member);
 	}
 	
 }
