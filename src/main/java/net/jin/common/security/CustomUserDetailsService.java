@@ -28,6 +28,7 @@ public class CustomUserDetailsService extends UserDatailsService {
 		log.info("member: "+member);
 		
 		return member == null ? null : new CustomUser(member);
+		log.info("member: "+member);
 	}
 	
 }
