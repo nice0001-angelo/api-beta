@@ -23,12 +23,11 @@ public class CustomUserDetailsService extends UserDatailsService {
 	public UserDeatails loadUserByUsername(String userName) throws UsernameNotFoundException{
 		log.info("userName: "+userName);
 		
-		Member mebmer = memberMapper.readByUserId(userName);
+		Member member = memberMapper.readByUserId(userName);
 		
 		log.info("member: "+member);
 		
 		return member == null ? null : new CustomUser(member);
 		log.info("member: "+member);
 	}
-	
 }
