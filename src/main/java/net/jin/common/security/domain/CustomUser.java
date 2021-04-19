@@ -3,6 +3,8 @@
  */
 package net.jin.common.security.domain;
 
+import java.util.stream.*;
+
 import net.jin.domain.*;
 
 /**
@@ -23,7 +25,7 @@ public class CustomUser extends User {
 	
 	public CustomUser(Member member) {
 		super(member.getUserId(), member.getUserPw(), member.getMemberAuthList().stream()
-				.map(auth -> new SimpelGrantedAuthority(auth.getAuth())).collect(Collector.toList()));
+				.map(auth -> new SimpelGrantedAuthority(auth.getAuth())).collect(Collectors.toList()));
 		
 		this.member = member;
 	}
