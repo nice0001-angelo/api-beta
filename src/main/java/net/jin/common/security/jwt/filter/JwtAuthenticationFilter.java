@@ -10,6 +10,8 @@ import javax.servlet.http.*;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.*;
 
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.*;
 import net.jin.common.security.jwt.constants.*;
 
 /**
@@ -47,5 +49,11 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 				.stream()
 				.map(GrantedAuthority::getAuthority)
 				.collect(Collectors.toList());
+		byte[] signingKey = SecurityConstants.JWT_SECRET.getBytes();
+		
+		String token = Jwts.builder()
+				.signWith(Keys.hmacShaKeyFor(signingKey), SignatureAlgorithm.HS512)
+				.setHeaderParam("typ", SecurityConstants.TOKEN_TYPE)
+				.setIssuer(SecurityConstants.TOKEN_ISSUER)
 	}
 }
