@@ -3,6 +3,8 @@
  */
 package net.jin.common.security.jwt.filter;
 
+import java.util.stream.*;
+
 import javax.servlet.http.*;
 
 import org.springframework.security.authentication.*;
@@ -35,5 +37,15 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		Authentication authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
 		
 		return authenticationManager.authenticate(authenticationToken);
+	}
+	
+	@Override
+	protected void successfulAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain, Authentication authentication) {
+		CustomUser customUser = ((CustomUser)authentication.getPrincipal());
+		
+		List<String> roles = customUser.getAuthorities()
+				.stream()
+				.map(GrantedAuthority::getAuthority)
+				.collect(Collectors.toList());
 	}
 }
