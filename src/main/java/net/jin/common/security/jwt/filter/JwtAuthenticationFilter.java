@@ -3,15 +3,19 @@
  */
 package net.jin.common.security.jwt.filter;
 
+import java.util.*;
 import java.util.stream.*;
 
+import javax.servlet.*;
 import javax.servlet.http.*;
 
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.*;
+import org.springframework.security.web.authentication.*;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.*;
+import net.jin.common.security.domain.*;
 import net.jin.common.security.jwt.constants.*;
 
 /**
@@ -55,5 +59,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 				.signWith(Keys.hmacShaKeyFor(signingKey), SignatureAlgorithm.HS512)
 				.setHeaderParam("typ", SecurityConstants.TOKEN_TYPE)
 				.setIssuer(SecurityConstants.TOKEN_ISSUER)
+				.setAudience(SecurityConstants.TOKEN_AUDIENCE)
+				.setSubject(""+customUser.getMember().getUserNo())
+				.setExpiration(new Date(System.currentTimeMillis()+864000000))
+				.claim("rol",roles)
+				.compact();
+		
+				httpServletResponse.addHeader(SecurityConstants.TOKEN_HEADER, SecurityConstants.TOKEN_PREFIX+token);
 	}
 }
