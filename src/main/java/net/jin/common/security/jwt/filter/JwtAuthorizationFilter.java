@@ -12,6 +12,7 @@ import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.*;
 import org.springframework.security.web.authentication.www.*;
 
+import io.jsonwebtoken.*;
 import net.jin.common.security.jwt.constants.*;
 
 /**
@@ -47,6 +48,9 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 			try {
 				byte[] signingKey = SecurityConstants.JWT_SECRET.getBytes();
 				
+				Jws<Claims> parsedToken = Jwts.parser()
+						.setSigningKey(signingKey)
+						.parseClaimsJws(token.replace("Bearer", ""));
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
