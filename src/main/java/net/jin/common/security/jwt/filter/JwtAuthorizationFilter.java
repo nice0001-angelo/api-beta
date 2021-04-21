@@ -42,6 +42,6 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 	}
 	
 	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest httpServletRequest) {
-		
+		String token = httpServletRequest.getHeader(SecurityConstants.TOKEN_HEADER);
 	}
 }
