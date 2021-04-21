@@ -69,7 +69,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 
 						
 			} catch (ExpiredJwtException exception) {
-				// TODO: handle exception
+				log.warn("Request to parse JWT : {} failed : {}", token, exception.getMessage());
 			}
 		}
 	}
