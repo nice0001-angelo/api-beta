@@ -3,6 +3,8 @@
  */
 package net.jin.common.security.jwt.filter;
 
+import java.util.stream.*;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -58,9 +60,15 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 				List<SimpleGrantedAuthority> authorities = ((List<?>)parsedToken.getBody()
 						.get("rol"))
 						.stream()
-						.map(authority -> new SimpleGrantedAuthority(String))
+						.map(authority -> new SimpleGrantedAuthority((String) authority))
+						.collect(Collectors.toList());
+				if(isNotEmpty(username)) {
+					return new UsernamePasswordAuthenticationToken(username, null, authorities);
+					
+				}
+
 						
-			} catch (Exception e) {
+			} catch (ExpiredJwtException exception) {
 				// TODO: handle exception
 			}
 		}
