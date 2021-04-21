@@ -45,6 +45,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 		String token = httpServletRequest.getHeader(SecurityConstants.TOKEN_HEADER);
 		if(isNotEmpty(token)) {
 			try {
+				byte[] signingKey = SecurityConstants.JWT_SECRET.getBytes();
 				
 			} catch (Exception e) {
 				// TODO: handle exception
