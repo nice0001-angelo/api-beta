@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 import org.mybatis.logging.*;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.context.*;
+import org.springframework.security.web.authentication.*;
 import org.springframework.security.web.authentication.www.*;
 
 import net.jin.common.security.jwt.constants.*;
@@ -38,5 +39,9 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 		
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		filterChain.doFilter(httpServletRequest, httpServletResponse);
+	}
+	
+	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest httpServletRequest) {
+		
 	}
 }
