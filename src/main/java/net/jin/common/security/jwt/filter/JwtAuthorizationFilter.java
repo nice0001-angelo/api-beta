@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 
 import org.mybatis.logging.*;
 import org.springframework.security.authentication.*;
+import org.springframework.security.core.authority.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.*;
 import org.springframework.security.web.authentication.www.*;
@@ -51,6 +52,14 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 				Jws<Claims> parsedToken = Jwts.parser()
 						.setSigningKey(signingKey)
 						.parseClaimsJws(token.replace("Bearer", ""));
+				
+				String username = parsedToken.getBody().getSubject();
+				
+				List<SimpleGrantedAuthority> authorities = ((List<?>)parsedToken.getBody()
+						.get("rol"))
+						.stream()
+						.map(authority -> new SimpleGrantedAuthority(String))
+						
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
