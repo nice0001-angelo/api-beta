@@ -69,10 +69,23 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 
 						
 			} catch (ExpiredJwtException exception) {
-				log.warn("Request to parse JWT : {} failed : {}", token, exception.getMessage());
+				log.warn("Request to parse expired JWT : {} failed : {}", token, exception.getMessage());
 			} catch (UnsupportedJwtException exception) {
-				
+				log.warn("Request to parse unsupported JWT : {} failed : {}", token, exception.getMessage());
+			} catch (MalformedJwtException exception) {
+				log.warn("Request to parse invalid JWT : {} failed : {}", token, exception.getMessage());
+			} catch (SignatureException exception) {
+				log.warn("Request to parse JWT with invalid signature : {} failed : {}", token, exception.getMessage());
+			} catch (IllegalArgumentException exception) {
+				log.warn("Request to parse empty or null JWT : {} failed : {}", token, exception.getMessage());
 			}
 		}
+		
+		return null;
 	}
+	
+	private boolean isEmpty(final CharSequence charSequence) {
+		return charSequence == null || charSequence.length() == 0;
+	}
+	
 }
