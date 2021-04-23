@@ -22,5 +22,10 @@ public class AuthUtil {
 				.setSigningKey(signingKey)
 				.parseClaimsJws(token);
 		
+		String subject = parseToken.getBody().getSubject();
+		
+		int userNo = Integer.parseInt(subject);
+		
+		return userNo;
 	}
 }
