@@ -88,4 +88,8 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
 		return charSequence == null || charSequence.length() == 0;
 	}
 	
+	private boolean isNotEmpty(final CharSequence charSequence) {
+		return !isEmpty(charSequence);
+	}
+	
 }
