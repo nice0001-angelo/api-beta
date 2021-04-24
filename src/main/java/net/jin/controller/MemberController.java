@@ -13,6 +13,7 @@ import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.java.*;
+import net.jin.common.util.*;
 import net.jin.domain.*;
 import net.jin.service.*;
 
@@ -96,7 +97,14 @@ public class MemberController {
 	//회원정보를 가져온다
 	@RequestMapping(value = "/myinfo", method = RequestMethod.GET)
 	public ResponseEntity<Member> getMyinfo(@RequestHeader (name = "Authorization") String requestHeader) throws Exception{
-		return ResponseEntity<Member>(member, HttpStatus.OK);
+		int userNo = AuthUtil.getUserNo(requestHeader);
+		log.info("register userNo = "+ userNo);
+		
+		Member member = memberService.read(userNo);
+		
+		member.setUserPw("");
+		
+		return new ResponseEntity<Member>(member, HttpStatus.OK);
 	}
 	
 	
