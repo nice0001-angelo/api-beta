@@ -92,4 +92,12 @@ public class MemberController {
 		
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+	
+	//회원정보를 가져온다
+	@RequestMapping(value = "/myinfo", method = RequestMethod.GET)
+	public ResponseEntity<Member> getMyinfo(@RequestHeader (name = "Authorization") String requestHeader) throws Exception{
+		return ResponseEntity<Member>(member, HttpStatus.OK);
+	}
+	
+	
 }
