@@ -3,7 +3,12 @@ var ACCESS_TOKEN = "";
 
 $(document).ready(function(){
 	$.ajax({
-		type: "POST"
+		type: "POST",
+		url: "aou/authenticate?username="+$("#userid").val()+"&password="+$("#password").val(),
+		success: function(data, textStatus, request){
+			var responseHeader = request.getResponseHeader("Authorization");
+			alert(responseHeader);
+		}
 		
 		
 	});
