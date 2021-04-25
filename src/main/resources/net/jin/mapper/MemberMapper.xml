@@ -29,6 +29,24 @@
 
  
  
+ <!--사용자ID로 회원정보 조회  -->
+<select id="readByUserId" resultMap="memberMap">
+SELECT mem.user_no
+,mem.user_id
+,user_pw
+,user_name
+,job
+,coin
+,enabled
+,reg_date
+,upd_date
+,auth
+FROM member mem LEFT OUTHER JOIN member_auth auth On mem.user_no = auth.user_no
+WHERE mem.user_id = #{userId} 
+ 
+</select>
+ 
+ 
 <!-- 목록조회 -->
 <select id="list" resultType="Member">
 
