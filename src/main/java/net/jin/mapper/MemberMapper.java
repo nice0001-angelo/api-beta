@@ -16,6 +16,9 @@ import net.jin.domain.*;
  */
 public interface MemberMapper {
 	
+	//사용자 ID로 회원정보 조회
+	public Member readByUserId(String userId) throws Exception;
+	
 	//List All
 	public List<Member> list() throws Exception;
 
