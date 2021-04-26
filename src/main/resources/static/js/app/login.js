@@ -36,7 +36,8 @@ $(document).ready(function(){
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
-						+"message: ")
+						+"message: "+xhr.responseText+"\n")
+						+"error: "+error);
 			}
 		});
 		
