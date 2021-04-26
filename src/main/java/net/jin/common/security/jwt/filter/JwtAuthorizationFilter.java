@@ -4,6 +4,7 @@
 package net.jin.common.security.jwt.filter;
 
 import java.io.*;
+import java.util.*;
 import java.util.stream.*;
 
 import javax.servlet.*;
@@ -14,7 +15,6 @@ import org.springframework.security.authentication.*;
 import org.springframework.security.core.*;
 import org.springframework.security.core.authority.*;
 import org.springframework.security.core.context.*;
-import org.springframework.security.web.authentication.*;
 import org.springframework.security.web.authentication.www.*;
 
 import io.jsonwebtoken.*;
