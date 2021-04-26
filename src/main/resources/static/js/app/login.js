@@ -18,13 +18,27 @@ $(document).ready(function(){
 			error: function(request, textStatus, errorThrown){
 				alert(request.getREsponseHeader("Authorization"));
 			}
-			
 		});
 	});
 	
 	//로그인 사용자 정보
 	$("#myInfoBtn").on("click",function(){
-		
+		$.ajax({
+			type: "GET",
+			url: "/users/myinfo/",
+			contentType: "application/json: charset=UTF-8",
+			headers:{
+				"Authorization": "Bearer"+ACCESS_TOKEN
+			},
+			success: function(data){
+				console.log(data);
+				alert(JSON.stringify(data));
+			},
+			error: function(xhr, status, error){
+				alert("code: "+xhr.status+"\n"
+						+"message: ")
+			}
+		});
 		
 	});
 	
