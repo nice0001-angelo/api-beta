@@ -18,6 +18,7 @@ import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.www.*;
 
 import io.jsonwebtoken.*;
+import lombok.extern.java.*;
 import net.jin.common.security.jwt.constants.*;
 
 /**
