@@ -86,9 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		corsConfiguration.addAllowedMethod("DELETE");
 		corsConfiguration.setExposedHeaders(Arrays.asList("Authorization","Content-Disposition"));
 		
-		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config);
-		System.out.println("CORS Bean");
-		System.out.println("CORS Bean");
+		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return urlBasedCorsConfigurationSource;
 		
 	}
