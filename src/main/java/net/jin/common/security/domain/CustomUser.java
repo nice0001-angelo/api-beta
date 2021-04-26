@@ -3,7 +3,12 @@
  */
 package net.jin.common.security.domain;
 
+import java.util.*;
 import java.util.stream.*;
+
+import org.springframework.security.core.*;
+import org.springframework.security.core.authority.*;
+import org.springframework.security.core.userdetails.*;
 
 import net.jin.domain.*;
 
@@ -25,7 +30,7 @@ public class CustomUser extends User {
 	
 	public CustomUser(Member member) {
 		super(member.getUserId(), member.getUserPw(), member.getMemberAuthList().stream()
-				.map(auth -> new SimpelGrantedAuthority(auth.getAuth())).collect(Collectors.toList()));
+				.map(auth -> new SimpleGrantedAuthority(auth.getAuth())).collect(Collectors.toList()));
 		
 		this.member = member;
 	}
