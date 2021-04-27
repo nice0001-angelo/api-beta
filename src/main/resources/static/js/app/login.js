@@ -14,7 +14,7 @@ $(document).ready(function(){
 				ACCESS_TOKEN = responseHeader.substr(7);
 				
 				console.log(ACCESS_TOKEN);
-			}
+			},
 			error: function(request, textStatus, errorThrown){
 				alert(request.getREsponseHeader("Authorization"));
 			}
@@ -36,7 +36,7 @@ $(document).ready(function(){
 			},
 			error: function(xhr, status, error){
 				alert("code: "+xhr.status+"\n"
-						+"message: "+xhr.responseText+"\n")
+						+"message: "+xhr.responseText+"\n"
 						+"error: "+error);
 			}
 		});
