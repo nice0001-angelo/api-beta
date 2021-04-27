@@ -36,9 +36,9 @@ $(document).ready(function(){
 				alert("member Read~~success !!!");
 				console.log(data);
 				alert(JSON.stringify(data));
-				$("#userId").val(data.userId);
-				$("#userPassword").val(data.userPassword);
-				$("#userName").val(data.userName);
+				$("#memberId").val(data.userId);
+				$("#memberPw").val(data.userPassword);
+				$("#memberName").val(data.userName);
 				$("#job").val(data.job);
 				if(data.memberAuthList[0]){
 					$("#memberAuth0").val(data.memberAuthList[0].auth);
@@ -63,9 +63,9 @@ $(document).ready(function(){
 	//Insert all
 	$("#memberRegisterBtn").on("click", function() {
 		var memberObject = {
-				userId: $("#userId").val(),
-				userPw: $("#userPassword").val(),
-				userName:  $("#userName").val(),
+				userId: $("#memberId").val(),
+				userPw: $("#memberPw").val(),
+				userName:  $("#memberName").val(),
 				job: $("#job").val()
 			};
 		
