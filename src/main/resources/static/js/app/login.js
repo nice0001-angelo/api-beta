@@ -22,25 +22,26 @@ $(document).ready(function(){
 	});
 	
 	//로그인 사용자 정보
-	$("#myInfoBtn").on("click",function(){
+	$("#myInfoBtn").on("click", function() {
+		alert("hi");
 		$.ajax({
-			type: "GET",
-			url: "/users/myinfo/",
-			contentType: "application/json; charset=UTF-8",
-			headers:{
-				"Authorization":"Bearer"+ACCESS_TOKEN
+			type : "GET",
+			url : "/users/myinfo/",
+			contentType : "application/json; charset=UTF-8",
+			headers : {
+				"Authorization" : "Bearer " + ACCESS_TOKEN
 			},
-			success: function(data){
+			success : function(data) {
 				console.log(data);
+				
 				alert(JSON.stringify(data));
 			},
-			error: function(xhr, status, error){
-				alert("code: "+xhr.status+"\n"
-						+"message: "+xhr.responseText+"\n"
-						+"error: "+error);
+			error : function(xhr, status, error) {
+				alert("code:" + xhr.status + "\n"
+					+ "message:" + xhr.responseText + "\n"
+					+ "error:" + error);
 			}
 		});
-		
 	});
 	
 });
