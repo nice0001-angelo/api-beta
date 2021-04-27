@@ -16,7 +16,7 @@ $(document).ready(function(){
 				console.log(ACCESS_TOKEN);
 			},
 			error: function(request, textStatus, errorThrown){
-				alert(request.getREsponseHeader("Authorization"));
+				alert(request.getResponseHeader("Authorization"));
 			}
 		});
 	});
