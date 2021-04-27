@@ -23,14 +23,13 @@ public class CustomUserDetailsService implements UserDetailsService {
 	
 	//사용자정보조회
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException{
-		log.info("userName: "+userName);
-		
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		log.info("userName : " + userName);
+
 		Member member = memberMapper.readByUserId(userName);
-		
-		log.info("member: "+member);
-		
+
+		log.info("member : " + member);
+
 		return member == null ? null : new CustomUser(member);
-		
-	}
+	} 
 }

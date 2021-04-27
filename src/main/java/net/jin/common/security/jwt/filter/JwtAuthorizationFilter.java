@@ -10,7 +10,8 @@ import java.util.stream.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import org.mybatis.logging.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.*;
 import org.springframework.security.core.authority.*;
@@ -18,7 +19,6 @@ import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.www.*;
 
 import io.jsonwebtoken.*;
-import lombok.extern.java.*;
 import net.jin.common.security.jwt.constants.*;
 
 /**
