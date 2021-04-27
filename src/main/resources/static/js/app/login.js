@@ -26,9 +26,9 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			url: "/users/myinfo/",
-			contentType: "application/json: charset=UTF-8",
+			contentType: "application/json; charset=UTF-8",
 			headers:{
-				"Authorization": "Bearer"+ACCESS_TOKEN
+				"Authorization":"Bearer"+ACCESS_TOKEN
 			},
 			success: function(data){
 				console.log(data);
