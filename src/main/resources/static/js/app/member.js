@@ -117,9 +117,9 @@ $(document).ready(function(){
 		var userNoVal = $("#userNo").val();
 		
 		var memberObject = {
-				userId: $("#userId").val(),
-				userPw: $("#userPassword").val(),
-				userName: $("#userName").val(),
+				userId: $("#memberId").val(),
+				userPw: $("#memberPw").val(),
+				userName: $("memberName").val(),
 				job: $("#job").val(),
 				memberAuthList:[
 					{
@@ -161,9 +161,9 @@ $(document).ready(function(){
 	//reset
 	$("#memberResetBtn").on("click",function(){
 		$("#userNo").val("");
-		$("#userId").val("");
-		$("#userPassword").val("");
-		$("#userName").val("");
+		$("#memberId").val("");
+		$("#memberPw").val("");
+		$("#memberName").val("");
 		$("#job").val("");
 		$("#memberAuth0").val("");
 		$("#memberAuth1").val("");
