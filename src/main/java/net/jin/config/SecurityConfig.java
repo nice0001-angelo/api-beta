@@ -50,7 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
-	//CustomUserDetailsService 빈을 인증 제공자에게 지정하고 비밀번호 암호처리기를 등록한다
+	
+		//CustomUserDetailsService 빈을 인증 제공자에게 지정하고 비밀번호 암호처리기를 등록한다
 		authenticationManagerBuilder.userDetailsService(createUserDetailsService())
 		.passwordEncoder(createPasswordEncoder());
 	}
