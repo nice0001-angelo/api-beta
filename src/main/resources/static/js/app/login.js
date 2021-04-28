@@ -6,7 +6,7 @@ $(document).ready(function(){
 	$("#loginBtn").on("click",function(){
 		$.ajax({
 			type: "POST",
-			url: "aou/authenticate?username="+$("#userid").val()+"&password="+$("#password").val(),
+			url: "api/authenticate?username="+$("#userid").val()+"&password="+$("#password").val(),
 			success: function(data, textStatus, request){
 				var responseHeader = request.getResponseHeader("Authorization");
 				alert(responseHeader);
