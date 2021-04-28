@@ -41,7 +41,7 @@ SELECT mem.user_no
 ,reg_date
 ,upd_date
 ,auth
-FROM member mem LEFT OUTHER JOIN member_auth auth On mem.user_no = auth.user_no
+FROM member mem LEFT OUTER JOIN member_auth auth ON mem.user_no = auth.user_no
 WHERE mem.user_id = #{userId} 
  
 </select>
