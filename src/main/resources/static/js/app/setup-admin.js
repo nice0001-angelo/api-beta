@@ -30,11 +30,9 @@ $(document).ready(function(){
 	});
 	
 	//입력값 리셋
-	$("#adminResetBtn").on("click",function(){
-		aletr("HI");
-		$("#adminId").val("");
-		$("#adminPw").val("");
-		$("#adminName").val("");
-	});
-	
+		$("#adminResetBtn").on("click",function(){
+			$("#adminId").val("");
+			$("#adminPw").val("");
+			$("#adminName").val("");
+		});
 });
