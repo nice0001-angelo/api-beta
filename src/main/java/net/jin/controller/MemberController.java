@@ -102,6 +102,7 @@ public class MemberController {
 	@RequestMapping(value = "/setup", method = RequestMethod.POST, produces= "text/plain;charset=UTF-8")
 	public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member) throws Exception{
 		
+		memberService.setupAdmin(member);
 		
 		return new ResponseEntity<>("SUCCESS",HttpStatus.OK);
 	}

@@ -30,4 +30,7 @@ public interface MemberService {
 
 	//update by userNo
 	public void modify(Member member) throws Exception;
+
+	//setupAdmin
+	public void setupAdmin(Member member) throws Exception;
 }
