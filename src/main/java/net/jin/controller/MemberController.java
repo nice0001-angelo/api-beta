@@ -6,6 +6,7 @@ package net.jin.controller;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.*;
 import org.springframework.http.*;
 import org.springframework.security.crypto.bcrypt.*;
 import org.springframework.security.crypto.password.*;
@@ -34,7 +35,10 @@ public class MemberController {
 	//비밀번호 암호 처리기
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();  
 	 
-	  
+	
+	@Autowired
+	private MessageSource messageSource;
+	
 	//List all
 	@RequestMapping(value ="", method = RequestMethod.GET)
 	public ResponseEntity<List<Member>> list() throws Exception{
@@ -92,6 +96,13 @@ public class MemberController {
 		memberService.modify(member);
 		
 		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	
+	//회원테이블에 데이터가 없으면 최초관리자를 생성한다
+	@RequestMapping(value = "/setup", method = RequestMethod.POST, produces= "text/plain;charset=UTF-8")
+	public ResponseEntity<String> setupAdmin(){
+		
+		return new ResponseEntity<>("SUCCESS",HttpStatus.OK);
 	}
 	
 	//회원정보를 가져온다
