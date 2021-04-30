@@ -9,24 +9,24 @@ $(document).ready(function(){
 		
 		console.log("userObject: "+userObject);
 		
-		alert("userObject: "+JSON.stringnify(userObject);
+		alert("userObject: "+JSON.stringify(userObject);
 		
 		$.ajax({
 			type: "POST",
 			url: "/users/setup",
-			success: function(data, textStatus, request){
-				var responseHeader = request.getResponseHeader("Authorization");
-				alert(responseHeader);
+			data: JSON.stringify(userObject),
+			contextType: "application/json; charSet=UTF-8",
+			success: function(){
 				
-				ACCESS_TOKEN = responseHeader.substr(7);
+				alert("Admin user Created");
 				
-				console.log(ACCESS_TOKEN);
 			},
-			error: function(request, textStatus, errorThrown){
-				alert(request.getResponseHeader("Authorization"));
+			error: function(xhr, status, error){
+				alert("code: "+xhr.status+"\n"
+						+ "message: "+xhr.responseText+"\n"
+						+ "error: "+error);
 			}
 		});
-		
 	});
 	
 	//입력값 리셋
