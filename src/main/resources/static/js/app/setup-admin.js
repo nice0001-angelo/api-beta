@@ -1,7 +1,12 @@
 $(document).ready(function(){
 	//등록
 	$("#adminRegisterBtn").on("click",function(){
-		
+		var userObject = {
+			userId: $("#adminId").val(),
+			userPw: $
+			userName:
+				
+		};
 		
 	});
 	
@@ -10,7 +15,6 @@ $(document).ready(function(){
 		$("#adminId").val("");
 		$("#adminId").val("");
 		$("#adminId").val("");
-		
 	});
 	
 });
