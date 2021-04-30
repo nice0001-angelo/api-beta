@@ -9,7 +9,7 @@ $(document).ready(function(){
 		
 		console.log("userObject: "+userObject);
 		
-		alert("userObject: "+JSON.stringify(userObject);
+		alert("userObject: "+JSON.stringify(userObject));
 		
 		$.ajax({
 			type: "POST",
