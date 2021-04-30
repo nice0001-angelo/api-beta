@@ -105,6 +105,9 @@ public class MemberController {
 		log.info("setupAdmin member.getUserName: "+member.getUserName());
 		log.info("setupAdmin memberService.countAll: "+memberService.countAll());
 		
+		//회원데이터 존재여부 확인
+		if(memberService.countAll()==0)
+		
 		memberService.setupAdmin(member);
 		
 		return new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
