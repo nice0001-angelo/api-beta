@@ -102,9 +102,12 @@ public class MemberController {
 	@RequestMapping(value = "/setup", method = RequestMethod.POST, produces= "text/plain;charset=UTF-8")
 	public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member) throws Exception{
 		
+		log.info("setupAdmin member.getUserName: "+member.getUserName());
+		log.info("setupAdmin memberService.countAll: "+memberService.countAll());
+		
 		memberService.setupAdmin(member);
 		
-		return new ResponseEntity<>("SUCCESS",HttpStatus.OK);
+		return new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
 	}
 	
 	//회원정보를 가져온다
