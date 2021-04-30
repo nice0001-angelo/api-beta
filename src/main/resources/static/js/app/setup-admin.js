@@ -30,7 +30,7 @@ $(document).ready(function(){
 	});
 	
 	//입력값 리셋
-	$("#adminReset").on("click",function(){
+	$("#adminResetBtn").on("click",function(){
 		$("#adminId").val("");
 		$("#adminPw").val("");
 		$("#adminName").val("");
