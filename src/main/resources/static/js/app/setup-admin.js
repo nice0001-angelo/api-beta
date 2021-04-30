@@ -3,8 +3,8 @@ $(document).ready(function(){
 	$("#adminRegisterBtn").on("click",function(){
 		var userObject = {
 			userId: $("#adminId").val(),
-			userPw: $
-			userName:
+			userPw: $("#adminPw").val(),
+			userName: $("#adminName").val()
 				
 		};
 		
@@ -13,8 +13,8 @@ $(document).ready(function(){
 	//입력값 리셋
 	$("#adminReset").on("click",function(){
 		$("#adminId").val("");
-		$("#adminId").val("");
-		$("#adminId").val("");
+		$("#adminPw").val("");
+		$("#adminName").val("");
 	});
 	
 });
