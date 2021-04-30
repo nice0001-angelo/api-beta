@@ -5,8 +5,13 @@ $(document).ready(function(){
 			userId: $("#adminId").val(),
 			userPw: $("#adminPw").val(),
 			userName: $("#adminName").val()
-				
 		};
+		
+		console.log("userObject: "+userObject);
+		
+		alert("userObject: "+JSON.stringnify(userObject);
+		
+		
 		
 	});
 	
