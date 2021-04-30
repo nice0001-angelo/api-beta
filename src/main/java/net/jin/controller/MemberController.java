@@ -100,7 +100,8 @@ public class MemberController {
 	
 	//회원테이블에 데이터가 없으면 최초관리자를 생성한다
 	@RequestMapping(value = "/setup", method = RequestMethod.POST, produces= "text/plain;charset=UTF-8")
-	public ResponseEntity<String> setupAdmin(){
+	public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member) throws Exception{
+		
 		
 		return new ResponseEntity<>("SUCCESS",HttpStatus.OK);
 	}
