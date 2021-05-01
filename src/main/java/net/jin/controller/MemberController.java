@@ -106,11 +106,20 @@ public class MemberController {
 		log.info("setupAdmin memberService.countAll: "+memberService.countAll());
 		
 		//회원데이터 존재여부 확인
-		if(memberService.countAll()==0)
+		if(memberService.countAll()==0) {
+			String inputPassword = member.getUserPw();
+			member.setUserPw(passwordEncoder.encode(inputPassword));
+			member.setJob("00");
+			memberService.setupAdmin(member);
+			
+			return new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
 		
-		memberService.setupAdmin(member);
+		}
 		
-		return new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		//최초관리자 생성 불가 메시지 생성
+		
+		
+		
 	}
 	
 	//회원정보를 가져온다
