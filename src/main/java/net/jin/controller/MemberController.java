@@ -106,7 +106,7 @@ public class MemberController {
 		log.info("setupAdmin memberService.countAll: "+memberService.countAll());
 		
 		//회원데이터 존재여부 확인
-		if(memberService.countAll()==0) {
+		if(memberService.countAll() == 0) {
 			String inputPassword = member.getUserPw();
 			member.setUserPw(passwordEncoder.encode(inputPassword));
 			member.setJob("00");
@@ -117,6 +117,9 @@ public class MemberController {
 		}
 		
 		//최초관리자 생성 불가 메시지 생성
+		String message = messageSource.getMessage("common.cannotSetupAdmin", null, Locale.CANADA);
+		
+		return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
 		
 		
 		

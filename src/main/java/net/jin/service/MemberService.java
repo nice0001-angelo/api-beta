@@ -30,7 +30,12 @@ public interface MemberService {
 
 	//update by userNo
 	public void modify(Member member) throws Exception;
+	
+	//countAll 회원테이블의 데이터컨수를 반환한다
+	public int countAll() throws Exception;
 
-	//setupAdmin
+	//setupAdmin 최초관리자 생성을 위한 데이터를 등록한다
 	public void setupAdmin(Member member) throws Exception;
+
+
 }
