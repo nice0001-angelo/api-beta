@@ -105,7 +105,17 @@ public class MemberServiceImpl implements MemberService{
 		}
 	}
 	
-	
+	//회원 테이블의 데이터 건수를 반환한다
+	@Override
+	public int countAll() throws Exception {
+		return memberMapper.countAll();
+	}
+
+	@Override
+	public void setupAdmin(Member member) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
 
