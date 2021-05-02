@@ -111,9 +111,18 @@ public class MemberServiceImpl implements MemberService{
 		return memberMapper.countAll();
 	}
 
+	@Transactional
 	@Override
 	public void setupAdmin(Member member) throws Exception {
-		// TODO Auto-generated method stub
+		memberMapper.create(member);
+		
+		MemberAuth memberAuth = new MemberAuth();
+		
+		memberAuth.setUserNo(member.getUserNo());
+		
+		memberAuth.setAuth("ROLE_ADMIN");
+		
+		memberMapper.createAuth(memberAuth);
 		
 	}
 	
