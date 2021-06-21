@@ -103,7 +103,6 @@ public class CodeGroupController {
 		//return new ResponseEntity<CodeGroup>(codeGroup, HttpStatus.OK);
 		return new ResponseEntity<CodeGroup>(codeGroupService.read(groupCode), HttpStatus.OK);
  	}
-	
 
 	//create
 	@RequestMapping(value ="", method = RequestMethod.POST)
