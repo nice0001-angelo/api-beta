@@ -36,6 +36,9 @@ user_no int(5) not null
 ,auth varchar(50) not null
 );
 
+drop table member_auth;
+
+
 alter table member_auth add constraint fk_member_auth_user_no 
 foreign key (user_no) references member(user_no);
 
